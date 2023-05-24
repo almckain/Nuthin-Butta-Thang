@@ -18,6 +18,7 @@ struct ContentView: View {
                 Color(red: 230/255, green: 230/255, blue: 250/255)
                     .ignoresSafeArea()
                 VStack{
+                    //Title Text
                     HStack{
                         Text("Nuthin' Butta \nThang")
                             .font(.system(size: 36, weight: .bold))
@@ -25,7 +26,7 @@ struct ContentView: View {
                             .padding(.leading, 15)
                         Spacer()
                     }
-                    //Added a comment
+                    //New Rant Session Button
                     HStack{
                         Spacer()
                         NavigationLink(destination: RantSessionView()){
@@ -39,20 +40,16 @@ struct ContentView: View {
                         Spacer()
                     }
                     
-                    ForEach(sessionManager.sessions) { session in
-                        SessionCard(session: session)
-                    }
+                    generateSessionCards()
                      
                     Spacer()
                 }
             }
         }
     }
-    func getRantPreview(for text: String) -> String {
-        if text.count > 25 {
-            return String(text.prefix(22)) + "..."
-        } else {
-            return text
+    func generateSessionCards() -> some View{
+        ForEach(sessionManager.sessions) { session in
+            SessionCard(session: session)
         }
     }
 }

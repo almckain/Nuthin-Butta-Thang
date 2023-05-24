@@ -14,11 +14,11 @@ struct SessionCard: View {
     var body: some View {
         HStack{
             Text("😎")
-                .font(.system(size: 56))
+                .font(.system(size: 48))
                 .padding(.leading)
             VStack(alignment: .leading){
                 Text(getRantPreview(for: session.text))
-                    .font(.body)
+                    .font(.title2)
                 Text("Created: May 23 2023")
             }
             Spacer()
