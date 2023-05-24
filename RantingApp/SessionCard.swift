@@ -15,6 +15,7 @@ struct SessionCard: View {
         HStack{
             Text("😎")
                 .font(.system(size: 56))
+                .padding(.leading)
             VStack(alignment: .leading){
                 Text(getRantPreview(for: session.text))
                     .font(.body)
