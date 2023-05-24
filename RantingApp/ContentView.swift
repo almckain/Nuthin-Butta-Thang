@@ -25,6 +25,7 @@ struct ContentView: View {
                             .padding(.leading, 15)
                         Spacer()
                     }
+                    //Added a comment
                     HStack{
                         Spacer()
                         NavigationLink(destination: RantSessionView()){
