@@ -40,19 +40,7 @@ struct ContentView: View {
                     }
                     
                     ForEach(sessionManager.sessions) { session in
-                        HStack{
-                            Text("😎")
-                                .font(.system(size: 56))
-                            VStack(alignment: .leading){
-                                Text(getRantPreview(for: session.text))
-                                    .font(.body)
-                                Text("Created: May 23 2023")
-                            }
-                            Spacer()
-                        }
-                        .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height * 0.10)
-                        .background(Color.white)
-                        .cornerRadius(12)
+                        SessionCard(session: session)
                     }
                      
                     Spacer()
