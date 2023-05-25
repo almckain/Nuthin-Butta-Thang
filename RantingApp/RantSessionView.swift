@@ -12,7 +12,7 @@ struct RantSessionView: View {
     @EnvironmentObject var sessionManager: RantSessionManager
     @State private var journalText: String = ""
     @State private var currentDate: String = ""
-    @State private var selectedEmoji: String?
+    @State private var selectedEmoji: String = ""
     
     let emojis: [String: String] = [
         "😡": "Anger, frustration, or annoyance.",
@@ -33,7 +33,7 @@ struct RantSessionView: View {
             TextEditor(text: $journalText)
                 .frame(height: 200)
                 .padding()
-            //createEmojiSelector()
+            createEmojiSelector()
             HStack{
                 Text("Created on:")
                 Text(currentDate)
@@ -42,7 +42,7 @@ struct RantSessionView: View {
                 currentDate = getCurrentDateAndTime()
             }
             Button(action: {
-                sessionManager.addSession(withText: journalText)
+                sessionManager.addSession(withText: journalText, withEmoji: selectedEmoji, withDate: currentDate)
                 presentationMode.wrappedValue.dismiss()
             }){
                 Text("Save")
@@ -68,14 +68,18 @@ struct RantSessionView: View {
     }
     
     func createEmojiSelector() -> some View{
-        ForEach(emojis.keys.sorted(), id: \.self) { emoji in
-            Text(emoji)
-                .font(.system(size: 40))
-                .padding(.horizontal, 10)
-                .opacity(emoji == selectedEmoji ? 1.0 : 0.3)
-                .onTapGesture {
-                    selectedEmoji = emoji
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(emojis.keys.sorted(), id: \.self) { emoji in
+                    Text(emoji)
+                        .font(.system(size: 40))
+                        .padding(.horizontal, 7)
+                        .opacity(emoji == selectedEmoji ? 1.0 : 0.3)
+                        .onTapGesture {
+                            selectedEmoji = emoji
+                        }
                 }
+            }
         }
     }
 }

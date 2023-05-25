@@ -11,4 +11,6 @@ import SwiftUI
 struct RantSession: Identifiable{
     let id = UUID()
     let text: String
+    let emoji: String
+    let date: String
 }

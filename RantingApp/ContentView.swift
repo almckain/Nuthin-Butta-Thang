@@ -27,6 +27,7 @@ struct ContentView: View {
                         Spacer()
                     }
                     //New Rant Session Button
+                    Divider()
                     HStack{
                         Spacer()
                         NavigationLink(destination: RantSessionView()){
@@ -39,8 +40,13 @@ struct ContentView: View {
                         }
                         Spacer()
                     }
-                    
-                    generateSessionCards()
+                    Divider()
+                    ScrollView{
+                        VStack{
+                            generateSessionCards()
+
+                        }
+                    }
                      
                     Spacer()
                 }
@@ -49,7 +55,9 @@ struct ContentView: View {
     }
     func generateSessionCards() -> some View{
         ForEach(sessionManager.sessions) { session in
-            SessionCard(session: session)
+            NavigationLink(destination: SessionDetailView(session: session)){
+                SessionCard(session: session)
+            }
         }
     }
 }

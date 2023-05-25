@@ -13,13 +13,14 @@ struct SessionCard: View {
     
     var body: some View {
         HStack{
-            Text("😎")
+            Text(session.emoji)
                 .font(.system(size: 48))
                 .padding(.leading)
             VStack(alignment: .leading){
                 Text(getRantPreview(for: session.text))
                     .font(.title2)
-                Text("Created: May 23 2023")
+                Text("Created: " + session.date)
+                    .font(.caption)
             }
             Spacer()
         }
