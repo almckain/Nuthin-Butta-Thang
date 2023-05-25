@@ -14,7 +14,7 @@ struct RantingAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeScreenView()
                 .environmentObject(sessionManager)
                 
         }

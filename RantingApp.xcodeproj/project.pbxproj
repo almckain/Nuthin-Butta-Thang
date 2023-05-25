@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6E2B8CEA2A1D84BA00396722 /* RantingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B8CE92A1D84BA00396722 /* RantingAppApp.swift */; };
-		6E2B8CEC2A1D84BA00396722 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B8CEB2A1D84BA00396722 /* ContentView.swift */; };
+		6E2B8CEC2A1D84BA00396722 /* PastRantSessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B8CEB2A1D84BA00396722 /* PastRantSessionsView.swift */; };
 		6E2B8CEE2A1D84BA00396722 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E2B8CED2A1D84BA00396722 /* Assets.xcassets */; };
 		6E2B8CF12A1D84BA00396722 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E2B8CF02A1D84BA00396722 /* Preview Assets.xcassets */; };
 		6E2B8CF82A1D852F00396722 /* RantSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B8CF72A1D852F00396722 /* RantSessionManager.swift */; };
@@ -16,12 +16,13 @@
 		6E2B8CFC2A1D85DB00396722 /* RantSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B8CFB2A1D85DB00396722 /* RantSessionView.swift */; };
 		6E4F9BE72A1EBD6F0000CF78 /* SessionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9BE62A1EBD6F0000CF78 /* SessionCard.swift */; };
 		6E4F9BE92A1F2C6B0000CF78 /* SessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9BE82A1F2C6B0000CF78 /* SessionDetailView.swift */; };
+		6E4F9BEB2A1FD9500000CF78 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9BEA2A1FD9500000CF78 /* HomeScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6E2B8CE62A1D84BA00396722 /* RantingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RantingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E2B8CE92A1D84BA00396722 /* RantingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RantingAppApp.swift; sourceTree = "<group>"; };
-		6E2B8CEB2A1D84BA00396722 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6E2B8CEB2A1D84BA00396722 /* PastRantSessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastRantSessionsView.swift; sourceTree = "<group>"; };
 		6E2B8CED2A1D84BA00396722 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E2B8CF02A1D84BA00396722 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6E2B8CF72A1D852F00396722 /* RantSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RantSessionManager.swift; sourceTree = "<group>"; };
@@ -29,6 +30,7 @@
 		6E2B8CFB2A1D85DB00396722 /* RantSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RantSessionView.swift; sourceTree = "<group>"; };
 		6E4F9BE62A1EBD6F0000CF78 /* SessionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCard.swift; sourceTree = "<group>"; };
 		6E4F9BE82A1F2C6B0000CF78 /* SessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailView.swift; sourceTree = "<group>"; };
+		6E4F9BEA2A1FD9500000CF78 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				6E2B8CE92A1D84BA00396722 /* RantingAppApp.swift */,
-				6E2B8CEB2A1D84BA00396722 /* ContentView.swift */,
+				6E2B8CEB2A1D84BA00396722 /* PastRantSessionsView.swift */,
 				6E2B8CED2A1D84BA00396722 /* Assets.xcassets */,
 				6E2B8CEF2A1D84BA00396722 /* Preview Content */,
 				6E2B8CF72A1D852F00396722 /* RantSessionManager.swift */,
@@ -70,6 +72,7 @@
 				6E2B8CFB2A1D85DB00396722 /* RantSessionView.swift */,
 				6E4F9BE62A1EBD6F0000CF78 /* SessionCard.swift */,
 				6E4F9BE82A1F2C6B0000CF78 /* SessionDetailView.swift */,
+				6E4F9BEA2A1FD9500000CF78 /* HomeScreenView.swift */,
 			);
 			path = RantingApp;
 			sourceTree = "<group>";
@@ -152,9 +155,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E2B8CEC2A1D84BA00396722 /* ContentView.swift in Sources */,
+				6E2B8CEC2A1D84BA00396722 /* PastRantSessionsView.swift in Sources */,
 				6E4F9BE92A1F2C6B0000CF78 /* SessionDetailView.swift in Sources */,
 				6E2B8CFA2A1D856200396722 /* RantSession.swift in Sources */,
+				6E4F9BEB2A1FD9500000CF78 /* HomeScreenView.swift in Sources */,
 				6E2B8CFC2A1D85DB00396722 /* RantSessionView.swift in Sources */,
 				6E2B8CEA2A1D84BA00396722 /* RantingAppApp.swift in Sources */,
 				6E4F9BE72A1EBD6F0000CF78 /* SessionCard.swift in Sources */,

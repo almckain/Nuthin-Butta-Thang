@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct PastRantSessionsView: View {
     
     @EnvironmentObject var sessionManager: RantSessionManager
     
@@ -20,7 +20,7 @@ struct ContentView: View {
                 VStack{
                     //Title Text
                     HStack{
-                        Text("Nuthin' Butta \nThang")
+                        Text("Rant Sessions")
                             .font(.system(size: 36, weight: .bold))
                             .padding(.top, 20)
                             .padding(.leading, 15)
@@ -62,9 +62,9 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct PastRantSessionsView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        PastRantSessionsView()
             .environmentObject(RantSessionManager())
     }
 }
