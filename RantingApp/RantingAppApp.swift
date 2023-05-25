@@ -12,12 +12,11 @@ struct RantingAppApp: App {
     
     @StateObject private var sessionManager = RantSessionManager()
 
-    
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(sessionManager)
-
+                
         }
     }
 }
