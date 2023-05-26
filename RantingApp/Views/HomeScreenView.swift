@@ -27,14 +27,33 @@ struct HomeScreenView: View {
                     }
                     //New Rant Session Button
                     Divider()
-                    HStack{
-                        Spacer()
-                        Text(affirmation.isEmpty ? "Fetching affirmation..." : affirmation)
-                            .multilineTextAlignment(.center)
+                    ScrollView{
+                        HStack{
+                            Spacer()
+                            Text(affirmation.isEmpty ? "Fetching affirmation..." : "\"\(affirmation)\"")
+                                .italic()
+                                .multilineTextAlignment(.center)
                             
-                        Spacer()
+                            
+                            Spacer()
+                        }
+                        Divider()
+                        
+                        VStack{
+                            HStack{
+                                Text("Recommended Articles")
+                                    .padding(.leading, 15.0)
+                                Spacer()
+                            }
+                            HStack{
+                                ArticleCard()
+                                ArticleCard()
+                                ArticleCard()
+                                
+                                
+                            }
+                        }
                     }
-                    Divider()
                      
                     Spacer()
                 }

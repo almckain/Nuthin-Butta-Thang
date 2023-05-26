@@ -20,6 +20,7 @@
 		6E4F9BEF2A20109B0000CF78 /* AffirmationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9BEE2A20109B0000CF78 /* AffirmationAPI.swift */; };
 		6E4F9BF12A2013EA0000CF78 /* BackupAffirmations.json in Resources */ = {isa = PBXBuildFile; fileRef = 6E4F9BF02A2013EA0000CF78 /* BackupAffirmations.json */; };
 		6E4F9BF32A20154E0000CF78 /* BackupAffirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9BF22A20154E0000CF78 /* BackupAffirmation.swift */; };
+		6E4F9BF52A2025C30000CF78 /* ArticleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9BF42A2025C30000CF78 /* ArticleCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		6E4F9BEE2A20109B0000CF78 /* AffirmationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationAPI.swift; sourceTree = "<group>"; };
 		6E4F9BF02A2013EA0000CF78 /* BackupAffirmations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BackupAffirmations.json; sourceTree = "<group>"; };
 		6E4F9BF22A20154E0000CF78 /* BackupAffirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupAffirmation.swift; sourceTree = "<group>"; };
+		6E4F9BF42A2025C30000CF78 /* ArticleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				6E4F9BEE2A20109B0000CF78 /* AffirmationAPI.swift */,
 				6E4F9BF02A2013EA0000CF78 /* BackupAffirmations.json */,
 				6E4F9BF22A20154E0000CF78 /* BackupAffirmation.swift */,
+				6E4F9BF42A2025C30000CF78 /* ArticleCard.swift */,
 			);
 			path = RantingApp;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				6E2B8CEA2A1D84BA00396722 /* RantingAppApp.swift in Sources */,
 				6E4F9BF32A20154E0000CF78 /* BackupAffirmation.swift in Sources */,
 				6E4F9BEF2A20109B0000CF78 /* AffirmationAPI.swift in Sources */,
+				6E4F9BF52A2025C30000CF78 /* ArticleCard.swift in Sources */,
 				6E4F9BE72A1EBD6F0000CF78 /* SessionCard.swift in Sources */,
 				6E2B8CF82A1D852F00396722 /* RantSessionManager.swift in Sources */,
 			);
