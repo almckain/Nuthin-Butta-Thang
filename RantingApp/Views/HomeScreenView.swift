@@ -52,6 +52,21 @@ struct HomeScreenView: View {
                                 
                             }
                         }
+                        Divider()
+                        //Calendar thing goes here
+                        Text("Calender")
+                            .padding()
+                        Divider()
+                        VStack{
+                            HStack{
+                                Text("Recent Rants")
+                                Spacer()
+                                NavigationLink(destination: PastRantSessionsView()) {
+                                    Text("All Rants")
+                                }
+                            }
+                            .padding()
+                        }
                         /*
                         NavigationLink(destination: MoodCalendarView()) {
                             Text("Rant Calendar")
@@ -84,5 +99,7 @@ struct HomeScreenView: View {
 struct HomeScreenView_Previews: PreviewProvider {
     static var previews: some View {
         HomeScreenView()
+            .environmentObject(RantSessionManager())
+            .environmentObject(UserPreferences())
     }
 }

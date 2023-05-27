@@ -11,11 +11,14 @@ import SwiftUI
 struct RantingAppApp: App {
     
     @StateObject private var sessionManager = RantSessionManager()
+    @StateObject private var userPreferences = UserPreferences()
 
+    
     var body: some Scene {
         WindowGroup {
-            HomeScreenView()
+            TrackingPreferenceView()
                 .environmentObject(sessionManager)
+                .environmentObject(userPreferences)
                 
         }
     }

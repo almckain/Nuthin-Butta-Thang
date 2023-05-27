@@ -66,5 +66,6 @@ struct PastRantSessionsView_Previews: PreviewProvider {
     static var previews: some View {
         PastRantSessionsView()
             .environmentObject(RantSessionManager())
+            .environmentObject(UserPreferences())
     }
 }

@@ -25,6 +25,7 @@
 		6E4F9BFC2A2178580000CF78 /* MoodCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9BFB2A2178580000CF78 /* MoodCalendarView.swift */; };
 		6E4F9BFE2A217C540000CF78 /* DayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9BFD2A217C540000CF78 /* DayDetailView.swift */; };
 		6E4F9C012A21875A0000CF78 /* TrackingPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9C002A21875A0000CF78 /* TrackingPreferenceView.swift */; };
+		6E4F9C032A218EDD0000CF78 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9C022A218EDD0000CF78 /* UserPreferences.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		6E4F9BFB2A2178580000CF78 /* MoodCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodCalendarView.swift; sourceTree = "<group>"; };
 		6E4F9BFD2A217C540000CF78 /* DayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailView.swift; sourceTree = "<group>"; };
 		6E4F9C002A21875A0000CF78 /* TrackingPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingPreferenceView.swift; sourceTree = "<group>"; };
+		6E4F9C022A218EDD0000CF78 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				6E4F9C002A21875A0000CF78 /* TrackingPreferenceView.swift */,
+				6E4F9C022A218EDD0000CF78 /* UserPreferences.swift */,
 			);
 			path = FirstUse;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				6E4F9C012A21875A0000CF78 /* TrackingPreferenceView.swift in Sources */,
 				6E4F9BF52A2025C30000CF78 /* ArticleCard.swift in Sources */,
 				6E4F9BE72A1EBD6F0000CF78 /* SessionCard.swift in Sources */,
+				6E4F9C032A218EDD0000CF78 /* UserPreferences.swift in Sources */,
 				6E2B8CF82A1D852F00396722 /* RantSessionManager.swift in Sources */,
 				6E4F9BFC2A2178580000CF78 /* MoodCalendarView.swift in Sources */,
 			);

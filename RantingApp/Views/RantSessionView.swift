@@ -13,6 +13,11 @@ struct RantSessionView: View {
     @State private var journalText: String = ""
     @State private var currentDate: String = ""
     @State private var selectedEmoji: String = ""
+    @State private var exercise: Bool = false
+    @State private var social: Bool = false
+    @State private var stressLevel: Int = 0
+    @State private var anxietyLevel: Int = 0
+    @State private var productivityLevel: Int = 0
     
     let emojis: [String: String] = [
         "😡": "Anger, frustration, or annoyance.",
@@ -42,7 +47,7 @@ struct RantSessionView: View {
                 currentDate = getCurrentDateAndTime()
             }
             Button(action: {
-                sessionManager.addSession(withText: journalText, withEmoji: selectedEmoji, withDate: currentDate)
+                sessionManager.addSession(withText: journalText, withEmoji: selectedEmoji, withDate: currentDate, withSocialInteraction: social, withExercise: exercise, withStressLevel: stressLevel, withProductivityLevel: productivityLevel, withAnxietyLevel: anxietyLevel)
                 presentationMode.wrappedValue.dismiss()
             }){
                 Text("Save")

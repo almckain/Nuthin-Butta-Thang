@@ -27,13 +27,46 @@ struct SessionCard: View {
         .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height * 0.10)
         .background(Color.white)
         .cornerRadius(12)
+        
+        HStack {
+            Toggle("Social Interaction", isOn: .constant(session.socialInteraction))
+                .disabled(true)
+            Toggle("Exercise", isOn: .constant(session.exercise))
+                .disabled(true)
+        }
+        
+        HStack {
+            LevelIndicator(level: session.stressLevel, title: "Stress")
+            LevelIndicator(level: session.productivityLevel, title: "Productivity")
+            LevelIndicator(level: session.anxietyLevel, title: "Anxiety")
+        }
     }
+    
     
     private func getRantPreview(for text: String) -> String{
         if text.count > 25{
             return String(text.prefix(22)) + "..."
         }else{
             return text
+        }
+    }
+    
+}
+
+struct LevelIndicator: View {
+    let level: Int
+    let title: String
+    
+    var body: some View {
+        VStack {
+            Text(title)
+            HStack {
+                ForEach(1...5, id: \.self) { i in
+                    Circle()
+                        .fill(i <= level ? Color.blue : Color.gray)
+                        .frame(width: 10, height: 10)
+                }
+            }
         }
     }
 }
