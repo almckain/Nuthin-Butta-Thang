@@ -34,7 +34,6 @@ struct HomeScreenView: View {
                                 .italic()
                                 .multilineTextAlignment(.center)
                             
-                            
                             Spacer()
                         }
                         Divider()
@@ -53,6 +52,13 @@ struct HomeScreenView: View {
                                 
                             }
                         }
+                        /*
+                        NavigationLink(destination: MoodCalendarView()) {
+                            Text("Rant Calendar")
+                                .font(.title2)
+                                .padding()
+                        }
+                         */
                     }
                      
                     Spacer()

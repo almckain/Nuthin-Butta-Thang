@@ -13,4 +13,9 @@ struct RantSession: Identifiable{
     let text: String
     let emoji: String
     let date: String
+    let socialInteraction: Bool
+    let exercise: Bool
+    let stressLevel: Int
+    let productivityLevel: Int
+    let anxietyLevel: Int
 }

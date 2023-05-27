@@ -9,9 +9,12 @@ import Foundation
 
 class RantSessionManager: ObservableObject{
     @Published var sessions: [RantSession] = []
-    func addSession(withText text: String, withEmoji emoji: String, withDate date: String){
+    
+    func addSession(withText text: String, withEmoji emoji: String, withDate date: String, withSocialInteraction socialInteration: Bool, withExercise exercise: Bool, withStressLevel stressLevel: Int, withProductivityLevel productivityLevel: Int, withAnxietyLevel anxietyLevel: Int){
         
-        let newSession = RantSession(text: text, emoji: emoji, date: date)
+        let newSession = RantSession(text: text, emoji: emoji, date: date, socialInteraction: socialInteration, exercise: exercise, stressLevel: stressLevel, productivityLevel: productivityLevel, anxietyLevel: anxietyLevel)
+        
+        //Add Depression level as an option
         
         sessions.append(newSession)
     }
