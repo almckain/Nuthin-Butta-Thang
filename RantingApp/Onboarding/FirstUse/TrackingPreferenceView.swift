@@ -17,32 +17,60 @@ struct TrackingPreferenceView: View {
     @AppStorage("exercisesRegularly") private var exercisesRegularly = false
     @AppStorage("experiencesStress") private var experiencesStress = false
     @AppStorage("experiencesAnxiety") private var experiencesAnxiety = false
+    @AppStorage("experiencesDepression") private var experiencesDepression = false
 
     var body: some View {
-        VStack {
-            Toggle("Are you typically social?", isOn: $isSocial)
-                .onChange(of: isSocial) { value in
-                    userPreferences.socialInteraction = value
+        ZStack{
+            VStack {
+                VStack{
+                    HStack{
+                        Text("Please select all that apply")
+                            .font(.title)
+                            .fontWeight(.medium)
+                        
+                        Spacer()
+                    }
+                    HStack{
+                        Text("(Can be changed later)")
+                            .fontWeight(.light)
+                        Spacer()
+                    }
                 }
-            
-            Toggle("Do you exercise on a regular basis?", isOn: $exercisesRegularly)
-                .onChange(of: exercisesRegularly) { value in
-                    userPreferences.exercise = value
+                .padding(.bottom, 20.0)
+                VStack{
+                    Toggle("Are you typically social?", isOn: $isSocial)
+                        .onChange(of: isSocial) { value in
+                            userPreferences.socialInteraction = value
+                        }
+                    
+                    Toggle("Do you exercise on a regular basis?", isOn: $exercisesRegularly)
+                        .onChange(of: exercisesRegularly) { value in
+                            userPreferences.exercise = value
+                        }
+                    
+                    Toggle("Do you experience stress?", isOn: $experiencesStress)
+                        .onChange(of: experiencesStress) { value in
+                            userPreferences.stress = value
+                        }
+                    
+                    Toggle("Do you experience anxiety?", isOn: $experiencesAnxiety)
+                        .onChange(of: experiencesAnxiety) { value in
+                            userPreferences.anxiety = value
+                        }
+                    
+                    Toggle("Do you experience depression?", isOn: $experiencesDepression)
+                        .onChange(of: experiencesDepression){ value in
+                            userPreferences.depression = value
+                        }
                 }
-            
-            Toggle("Do you experience stress?", isOn: $experiencesStress)
-                .onChange(of: experiencesStress) { value in
-                    userPreferences.stress = value
-                }
-            
-            Toggle("Do you experience anxiety?", isOn: $experiencesAnxiety)
-                .onChange(of: experiencesAnxiety) { value in
-                    userPreferences.anxiety = value
-                }
-                
+                .padding(.trailing, 14.0)
+                //.frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height * 0.5)
+                //.background(Color.blue)
+                .cornerRadius(12)
+                Spacer()
             }
-            .padding()
-        
+            .padding(27.0)
+        }
     }
 }
 

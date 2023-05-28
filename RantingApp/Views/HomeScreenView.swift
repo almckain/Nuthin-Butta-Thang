@@ -8,18 +8,25 @@
 import SwiftUI
 
 struct HomeScreenView: View {
-    @State var shouldShowOnboarding: Bool = true
+    
+    @AppStorage("shouldShowOnBoarding") var shouldShowOnboarding: Bool = true
     @State private var affirmation: String = ""
     @EnvironmentObject var userPreferences: UserPreferences
     @EnvironmentObject var sessionManager: RantSessionManager
     
-    
+    //For testing regarding the onboarding
+    init(){
+        shouldShowOnboarding = true
+    }
     var body: some View {
         NavigationView{
             ZStack{
                 //Changes background color
-                Color(red: 230/255, green: 230/255, blue: 250/255)
-                    .ignoresSafeArea()
+                LinearGradient(
+                            gradient: Gradient(colors: [Color(red: 230/255, green: 230/255, blue: 250/255), Color.white]),
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
                 VStack{
                     //Title Text
                     HStack{
@@ -89,7 +96,7 @@ struct HomeScreenView: View {
         }
         .navigationBarBackButtonHidden(true)
         .fullScreenCover(isPresented: $shouldShowOnboarding, content: {
-            OnboardingView()
+            OnboardingView(shouldShowOnboarding: $shouldShowOnboarding)
         })
     }
     

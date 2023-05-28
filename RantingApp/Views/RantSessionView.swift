@@ -134,5 +134,6 @@ struct RantSessionView_Previews: PreviewProvider {
     static var previews: some View {
         RantSessionView()
             .environmentObject(RantSessionManager())
+            .environmentObject(UserPreferences())
     }
 }
