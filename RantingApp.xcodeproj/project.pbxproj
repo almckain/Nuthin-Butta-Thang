@@ -26,8 +26,8 @@
 		6E4F9BFE2A217C540000CF78 /* DayDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9BFD2A217C540000CF78 /* DayDetailView.swift */; };
 		6E4F9C012A21875A0000CF78 /* TrackingPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9C002A21875A0000CF78 /* TrackingPreferenceView.swift */; };
 		6E4F9C032A218EDD0000CF78 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9C022A218EDD0000CF78 /* UserPreferences.swift */; };
-		6E4F9C062A230AC00000CF78 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9C052A230AC00000CF78 /* OnboardingView.swift */; };
 		6E4F9C082A2313B70000CF78 /* ColorThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9C072A2313B70000CF78 /* ColorThemeView.swift */; };
+		6E4F9C0A2A232D500000CF78 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9C092A232D500000CF78 /* OnboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,8 +51,8 @@
 		6E4F9BFD2A217C540000CF78 /* DayDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDetailView.swift; sourceTree = "<group>"; };
 		6E4F9C002A21875A0000CF78 /* TrackingPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingPreferenceView.swift; sourceTree = "<group>"; };
 		6E4F9C022A218EDD0000CF78 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
-		6E4F9C052A230AC00000CF78 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		6E4F9C072A2313B70000CF78 /* ColorThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorThemeView.swift; sourceTree = "<group>"; };
+		6E4F9C092A232D500000CF78 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 		6E2B8CE82A1D84BA00396722 /* RantingApp */ = {
 			isa = PBXGroup;
 			children = (
-				6E4F9C042A230AA10000CF78 /* Onbourding */,
+				6E4F9C042A230AA10000CF78 /* Onboarding */,
 				6E4F9BF82A2177680000CF78 /* MoodTracking */,
 				6E4F9BEC2A200E850000CF78 /* Views */,
 				6E2B8CE92A1D84BA00396722 /* RantingAppApp.swift */,
@@ -157,13 +157,13 @@
 			path = FirstUse;
 			sourceTree = "<group>";
 		};
-		6E4F9C042A230AA10000CF78 /* Onbourding */ = {
+		6E4F9C042A230AA10000CF78 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
 				6E4F9BFF2A2187380000CF78 /* FirstUse */,
-				6E4F9C052A230AC00000CF78 /* OnboardingView.swift */,
+				6E4F9C092A232D500000CF78 /* OnboardingView.swift */,
 			);
-			path = Onbourding;
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +240,7 @@
 				6E2B8CEC2A1D84BA00396722 /* PastRantSessionsView.swift in Sources */,
 				6E4F9BE92A1F2C6B0000CF78 /* SessionDetailView.swift in Sources */,
 				6E4F9C082A2313B70000CF78 /* ColorThemeView.swift in Sources */,
+				6E4F9C0A2A232D500000CF78 /* OnboardingView.swift in Sources */,
 				6E4F9BFA2A2177AA0000CF78 /* Day.swift in Sources */,
 				6E2B8CFA2A1D856200396722 /* RantSession.swift in Sources */,
 				6E4F9BEB2A1FD9500000CF78 /* HomeScreenView.swift in Sources */,
@@ -253,7 +254,6 @@
 				6E4F9BE72A1EBD6F0000CF78 /* SessionCard.swift in Sources */,
 				6E4F9C032A218EDD0000CF78 /* UserPreferences.swift in Sources */,
 				6E2B8CF82A1D852F00396722 /* RantSessionManager.swift in Sources */,
-				6E4F9C062A230AC00000CF78 /* OnboardingView.swift in Sources */,
 				6E4F9BFC2A2178580000CF78 /* MoodCalendarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

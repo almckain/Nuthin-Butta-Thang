@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct HomeScreenView: View {
+    @State var shouldShowOnboarding: Bool = true
     @State private var affirmation: String = ""
     @EnvironmentObject var userPreferences: UserPreferences
     @EnvironmentObject var sessionManager: RantSessionManager
+    
     
     var body: some View {
         NavigationView{
@@ -86,7 +88,11 @@ struct HomeScreenView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .fullScreenCover(isPresented: $shouldShowOnboarding, content: {
+            OnboardingView()
+        })
     }
+    
     
     func fetchAffirmation() {
         AffirmationAPI().fetchAffirmation { fetchedAffirmation in

@@ -8,17 +8,8 @@
 import SwiftUI
 
 struct ColorThemeView: View {
-    
-    @Binding var isFirstLaunch: Bool
-
-    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        Button(action: {
-            isFirstLaunch = false
-        }) {
-            Text("Finish")
-        }
     }
 }
 /*
