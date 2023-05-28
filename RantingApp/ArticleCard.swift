@@ -12,11 +12,11 @@ struct ArticleCard: View{
         HStack{
             Text("Dealing with Anxiety")
                 .multilineTextAlignment(.center)
-                .padding(.leading, 27.0)
+                .padding(.leading, 19.0)
 
             Spacer()
         }
-        .frame(width: UIScreen.main.bounds.width * 0.30, height: UIScreen.main.bounds.height * 0.15)
+        .frame(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.height * 0.15)
         .background(Color.white)
         .cornerRadius(12)
         .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.blue, lineWidth: 3))

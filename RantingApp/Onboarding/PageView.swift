@@ -21,10 +21,10 @@ struct PageView: View {
                 } label: {
                     Text("Get Started")
                         .bold()
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color.blue)
                         .frame(width: 200, height: 50)
                         .background(Color.green)
-                        .cornerRadius(12)
+                        .cornerRadius(24)
                 }
 
             }

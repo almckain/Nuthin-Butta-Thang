@@ -18,4 +18,5 @@ struct RantSession: Identifiable{
     let stressLevel: Int
     let productivityLevel: Int
     let anxietyLevel: Int
+    let depressionLevel: Int
 }

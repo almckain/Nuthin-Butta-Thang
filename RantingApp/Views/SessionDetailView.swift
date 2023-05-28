@@ -28,7 +28,7 @@ struct SessionDetailView: View {
 
 struct SessionDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let mockSession = RantSession(text: "I was running late for work, and as I rushed out the door, I realized my car had a flat tire. I frantically searched for a spare, only to find it was also flat. I was forced to take public transportation, but encountered a long delay, which caused me to miss an important meeting. Once I finally arrived, I realized I had left my wallet at home, leaving me without any money or ID. I spent the day feeling unprepared and inconvenienced, frustrated and flustered.", emoji: "😡", date: "Created: 22 May 2023", socialInteraction: false, exercise: false, stressLevel: 0, productivityLevel: 0, anxietyLevel: 0)
+        let mockSession = RantSession(text: "I was running late for work, and as I rushed out the door, I realized my car had a flat tire. I frantically searched for a spare, only to find it was also flat. I was forced to take public transportation, but encountered a long delay, which caused me to miss an important meeting. Once I finally arrived, I realized I had left my wallet at home, leaving me without any money or ID. I spent the day feeling unprepared and inconvenienced, frustrated and flustered.", emoji: "😡", date: "Created: 22 May 2023", socialInteraction: false, exercise: false, stressLevel: 0, productivityLevel: 0, anxietyLevel: 0, depressionLevel: 0)
         SessionDetailView(session: mockSession)
     }
 }

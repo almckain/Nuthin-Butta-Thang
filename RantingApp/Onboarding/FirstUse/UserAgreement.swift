@@ -12,6 +12,7 @@ struct UserAgreement: View {
         VStack{
             Text("I am not a therapist, please do not use this app as an alternative to therapy from a licensed professional.")
                 .padding()
+                
             //Button
         }
     }

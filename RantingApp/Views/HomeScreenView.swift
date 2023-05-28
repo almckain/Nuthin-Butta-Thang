@@ -14,60 +14,81 @@ struct HomeScreenView: View {
     @EnvironmentObject var userPreferences: UserPreferences
     @EnvironmentObject var sessionManager: RantSessionManager
     
+    let fetchTimer = Timer.publish(every: 3600, on: .main, in: .common).autoconnect()
+
     //For testing regarding the onboarding
+    /*
     init(){
         shouldShowOnboarding = true
     }
+    */
+     
     var body: some View {
         NavigationView{
             ZStack{
                 //Changes background color
                 LinearGradient(
-                            gradient: Gradient(colors: [Color(red: 230/255, green: 230/255, blue: 250/255), Color.white]),
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
+                    gradient: Gradient(colors: [userPreferences.secondaryColor, userPreferences.secondaryColor, userPreferences.primaryColor]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .ignoresSafeArea()
+                
                 VStack{
                     //Title Text
                     HStack{
                         Text("Nuthin' Butta\nThang")
                             .font(.system(size: 36, weight: .bold))
-                            .padding(.top, 20)
+                            .padding(.top, 10)
                             .padding(.leading, 15)
+                            .foregroundColor(Color.white)
                         Spacer()
                     }
-                    //New Rant Session Button
-                    Divider()
+                    
                     ScrollView{
+                        //Affirmation
                         HStack{
                             Spacer()
                             Text(affirmation.isEmpty ? "Fetching affirmation..." : "\"\(affirmation)\"")
                                 .italic()
                                 .multilineTextAlignment(.center)
-                            
+                                .padding(10)
+
                             Spacer()
                         }
-                        Divider()
+                        .fixedSize(horizontal: false, vertical: true)
+                        .frame(width: UIScreen.main.bounds.width * 0.95)
+                        .background(Color.white)
+                        .cornerRadius(20)
                         
+                        //Recommended Articles
                         VStack{
                             HStack{
                                 Text("Recommended Articles")
-                                    .padding(.leading, 15.0)
+                                    .padding(.leading, 20.0)
                                 Spacer()
                             }
                             HStack{
                                 ArticleCard()
+                                    .padding(.leading, 20)
+                                Spacer()
                                 ArticleCard()
+                                Spacer()
                                 ArticleCard()
-                                
+                                    .padding(.trailing, 20)
                                 
                             }
                         }
+                        .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height * 0.23)
+                        .background(Color.white)
+                        .cornerRadius(20)
                         Divider()
-                        //Calendar thing goes here
+                        
+                        //Calendar
                         Text("Calender")
                             .padding()
-                        Divider()
+                        
+                        //Recent Rants
                         VStack{
                             HStack{
                                 Text("Recent Rants")
@@ -90,7 +111,7 @@ struct HomeScreenView: View {
                     Spacer()
                 }
             }
-            .onAppear {
+            .onReceive(fetchTimer){ _ in
                 fetchAffirmation()
             }
         }

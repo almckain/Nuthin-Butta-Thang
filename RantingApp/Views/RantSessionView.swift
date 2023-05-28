@@ -18,6 +18,7 @@ struct RantSessionView: View {
     @State private var stressLevel: Int = 0
     @State private var anxietyLevel: Int = 0
     @State private var productivityLevel: Int = 0
+    @State private var depressionLevel: Int = 0
     
     let emojis: [String: String] = [
         "😡": "Anger, frustration, or annoyance.",
@@ -47,45 +48,60 @@ struct RantSessionView: View {
                 currentDate = getCurrentDateAndTime()
             }
             
-            
-            if userPreferences.exercise {
-                Toggle("Did you exercise?", isOn: $exercise)
-            }
-            
-            if userPreferences.socialInteraction {
-                Toggle("Are you social?", isOn: $social)
-            }
-            
-            if userPreferences.stress {
-                Text("Stress Level")
-                HStack {
-                    ForEach(1...5, id: \.self) { level in
-                        Circle()
-                            .foregroundColor(stressLevel >= level ? .blue : .gray)
-                            .frame(width: 20, height: 20)
-                            .onTapGesture {
-                                stressLevel = level
-                            }
+            Group{
+                if userPreferences.exercise {
+                    Toggle("Did you exercise?", isOn: $exercise)
+                }
+                
+                if userPreferences.socialInteraction {
+                    Toggle("Are you social?", isOn: $social)
+                }
+                
+                if userPreferences.stress {
+                    Text("Stress Level")
+                    HStack {
+                        ForEach(1...5, id: \.self) { level in
+                            Circle()
+                                .foregroundColor(stressLevel >= level ? .blue : .gray)
+                                .frame(width: 20, height: 20)
+                                .onTapGesture {
+                                    stressLevel = level
+                                }
+                        }
                     }
                 }
-            }
-            
-            if userPreferences.anxiety {
-                Text("Anxiety Level")
-                HStack {
-                    ForEach(1...5, id: \.self) { level in
-                        Circle()
-                            .foregroundColor(anxietyLevel >= level ? .blue : .gray)
-                            .frame(width: 20, height: 20)
-                            .onTapGesture {
-                                anxietyLevel = level
-                            }
+                
+                if userPreferences.anxiety {
+                    Text("Anxiety Level")
+                    HStack {
+                        ForEach(1...5, id: \.self) { level in
+                            Circle()
+                                .foregroundColor(anxietyLevel >= level ? .blue : .gray)
+                                .frame(width: 20, height: 20)
+                                .onTapGesture {
+                                    anxietyLevel = level
+                                }
+                        }
+                    }
+                }
+                
+                if userPreferences.depression {
+                    Text("Depression Level")
+                    HStack{
+                        ForEach(1...5, id: \.self) { level in
+                            Circle()
+                                .foregroundColor(depressionLevel >= level ? .blue : .gray)
+                                .frame(width: 20, height: 20)
+                                .onTapGesture {
+                                    depressionLevel = level
+                                }
+                        }
                     }
                 }
             }
             
             Button(action: {
-                sessionManager.addSession(withText: journalText, withEmoji: selectedEmoji, withDate: currentDate, withSocialInteraction: social, withExercise: exercise, withStressLevel: stressLevel, withProductivityLevel: productivityLevel, withAnxietyLevel: anxietyLevel)
+                sessionManager.addSession(withText: journalText, withEmoji: selectedEmoji, withDate: currentDate, withSocialInteraction: social, withExercise: exercise, withStressLevel: stressLevel, withProductivityLevel: productivityLevel, withAnxietyLevel: anxietyLevel, withDepressionLevel: depressionLevel)
                 presentationMode.wrappedValue.dismiss()
             }) {
                 Text("Save")
@@ -100,6 +116,7 @@ struct RantSessionView: View {
         }
         .padding()
         .navigationTitle("Rant Session")
+
     }
     
     @Environment(\.presentationMode) var presentationMode
