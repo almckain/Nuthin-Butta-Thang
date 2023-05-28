@@ -8,18 +8,33 @@
 import SwiftUI
 
 @main
-struct RantingAppApp: App {
+struct RantAppApp: App {
+    @AppStorage("isFirstLaunch") var isFirstLaunch = true
+    @StateObject var sessionManager = RantSessionManager()
+    @StateObject var userPreferences = UserPreferences()
     
-    @StateObject private var sessionManager = RantSessionManager()
-    @StateObject private var userPreferences = UserPreferences()
-
+    init() {
+            print("isFirstLaunch: \(isFirstLaunch)")
+        }
     
     var body: some Scene {
         WindowGroup {
-            TrackingPreferenceView()
-                .environmentObject(sessionManager)
-                .environmentObject(userPreferences)
-                
+            if isFirstLaunch {
+                OnboardingView(isFirstLaunch: $isFirstLaunch)
+                    .environmentObject(sessionManager)
+                    .environmentObject(userPreferences)
+                    .onAppear{
+                        print("Showing OnboardingView")
+                    }
+            } else {
+                HomeScreenView()
+                    .environmentObject(sessionManager)
+                    .environmentObject(userPreferences)
+                    .onAppear{
+                        print("Showing HomeScreenView")
+
+                    }
+            }
         }
     }
 }

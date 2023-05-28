@@ -28,18 +28,6 @@ struct SessionCard: View {
         .background(Color.white)
         .cornerRadius(12)
         
-        HStack {
-            Toggle("Social Interaction", isOn: .constant(session.socialInteraction))
-                .disabled(true)
-            Toggle("Exercise", isOn: .constant(session.exercise))
-                .disabled(true)
-        }
-        
-        HStack {
-            LevelIndicator(level: session.stressLevel, title: "Stress")
-            LevelIndicator(level: session.productivityLevel, title: "Productivity")
-            LevelIndicator(level: session.anxietyLevel, title: "Anxiety")
-        }
     }
     
     

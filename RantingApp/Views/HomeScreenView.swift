@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeScreenView: View {
     @State private var affirmation: String = ""
+    @EnvironmentObject var userPreferences: UserPreferences
+    @EnvironmentObject var sessionManager: RantSessionManager
     
     var body: some View {
         NavigationView{
@@ -61,7 +63,7 @@ struct HomeScreenView: View {
                             HStack{
                                 Text("Recent Rants")
                                 Spacer()
-                                NavigationLink(destination: PastRantSessionsView()) {
+                                NavigationLink(destination: PastRantSessionsView().environmentObject(sessionManager).environmentObject(userPreferences)) {
                                     Text("All Rants")
                                 }
                             }
@@ -83,6 +85,7 @@ struct HomeScreenView: View {
                 fetchAffirmation()
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
     
     func fetchAffirmation() {

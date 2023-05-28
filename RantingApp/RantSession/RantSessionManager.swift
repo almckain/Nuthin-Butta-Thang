@@ -9,6 +9,8 @@ import Foundation
 
 class RantSessionManager: ObservableObject{
     @Published var sessions: [RantSession] = []
+    @Published var userPreferences = UserPreferences()
+
     
     func addSession(withText text: String, withEmoji emoji: String, withDate date: String, withSocialInteraction socialInteration: Bool, withExercise exercise: Bool, withStressLevel stressLevel: Int, withProductivityLevel productivityLevel: Int, withAnxietyLevel anxietyLevel: Int){
         
