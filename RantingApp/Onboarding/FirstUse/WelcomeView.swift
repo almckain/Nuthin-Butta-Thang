@@ -10,20 +10,21 @@ import SwiftUI
 struct WelcomeView: View {
     var body: some View {
         VStack{
-            Text("Welcome to...")
-                .font(.title)
+            Text("Welcome To...")
+                .font(.largeTitle)
                 .fontWeight(.ultraLight)
-                .padding(.top, 20.0)
+                .padding(.top, 20)
             HStack{
                 Text("Nothin' Butta \nThang")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .padding([.top, .leading, .bottom], 15.0)
+                    .padding([.top, .bottom], 15.0)
+                    .padding(.leading, 35)
                     .foregroundColor(Color.white)
                 Spacer()
             }
             .frame(width: UIScreen.main.bounds.width * 0.96, height: UIScreen.main.bounds.height * 0.15)
-            .background(Color(red: 99/255, green: 56/255, blue: 174/255))
+            .background(Color.white.opacity(0.2))
             .cornerRadius(20)
             
             VStack{
@@ -47,6 +48,10 @@ struct WelcomeView: View {
                     .padding(.vertical)
 
             }
+            .foregroundColor(Color.white)
+            .frame(width: UIScreen.main.bounds.width * 0.96, height: UIScreen.main.bounds.height * 0.4)
+            .background(Color.white.opacity(0.2))
+            .cornerRadius(20)
             
             Spacer()
         }

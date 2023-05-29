@@ -17,18 +17,19 @@ struct HomeScreenView: View {
     let fetchTimer = Timer.publish(every: 3600, on: .main, in: .common).autoconnect()
 
     //For testing regarding the onboarding
-    
     init(){
         shouldShowOnboarding = true
     }
     
      
     var body: some View {
+        
         NavigationView{
             ZStack{
                 //Changes background color
+                
                 LinearGradient(
-                    gradient: Gradient(colors: [userPreferences.secondaryColor, userPreferences.secondaryColor, userPreferences.primaryColor]),
+                    gradient: Gradient(colors: [userPreferences.secondaryColor, userPreferences.middleColor, userPreferences.primaryColor]),
                     startPoint: .top,
                     endPoint: .bottom
                 )

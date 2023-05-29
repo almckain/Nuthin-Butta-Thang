@@ -9,30 +9,44 @@ import SwiftUI
 
 struct OnboardingView: View {
     @Binding var shouldShowOnboarding: Bool
+    
+    @EnvironmentObject var userPreferences: UserPreferences
+    
     var body: some View {
-        TabView{
-            PageView(
-                currentView: AnyView(TrackingPreferenceView()),
-                shouldShowOnBoarding: $shouldShowOnboarding
+        ZStack{
+            LinearGradient(
+                gradient: Gradient(colors: [userPreferences.secondaryColor, userPreferences.middleColor, userPreferences.primaryColor]),
+                startPoint: .top,
+                endPoint: .bottom
             )
-            PageView(
-                currentView: AnyView(ColorThemeView()),
-                shouldShowOnBoarding: $shouldShowOnboarding
-            )
-            PageView(
-                currentView: AnyView(UserAgreement(shouldShowOnBoarding: $shouldShowOnboarding)),
-                shouldShowOnBoarding: $shouldShowOnboarding
-            )
-            /*
-            TrackingPreferenceView()
-                .tag(0)
-            ColorThemeView()
-                .tag(1)
-             */
+            .ignoresSafeArea()
+            
+            TabView{
+                PageView(
+                    currentView: AnyView(WelcomeView()),
+                    shouldShowOnBoarding: $shouldShowOnboarding)
+                PageView(
+                    currentView: AnyView(TrackingPreferenceView()),
+                    shouldShowOnBoarding: $shouldShowOnboarding
+                )
+                PageView(
+                    currentView: AnyView(ColorThemeView()),
+                    shouldShowOnBoarding: $shouldShowOnboarding
+                )
+                PageView(
+                    currentView: AnyView(UserAgreement(shouldShowOnBoarding: $shouldShowOnboarding)),
+                    shouldShowOnBoarding: $shouldShowOnboarding
+                )
+                /*
+                 TrackingPreferenceView()
+                 .tag(0)
+                 ColorThemeView()
+                 .tag(1)
+                 */
+            }
+            .tabViewStyle(PageTabViewStyle())
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         }
-        .tabViewStyle(PageTabViewStyle())
-        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-
     }
 }
 

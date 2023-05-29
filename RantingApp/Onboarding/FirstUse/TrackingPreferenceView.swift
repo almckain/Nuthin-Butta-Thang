@@ -27,46 +27,63 @@ struct TrackingPreferenceView: View {
                         Text("Please select all that apply")
                             .font(.title)
                             .fontWeight(.medium)
-                        
+                            .padding(.leading, 20)
+
                         Spacer()
                     }
                     HStack{
                         Text("(Can be changed later)")
                             .fontWeight(.light)
+                            .padding(.leading, 20)
+
                         Spacer()
                     }
                 }
-                .padding(.bottom, 20.0)
+                .frame(width: UIScreen.main.bounds.width * 0.96, height: UIScreen.main.bounds.height * 0.15)
+                .background(Color.white.opacity(0.2))
+                .cornerRadius(20)
+                .foregroundColor(Color.white)
+
+                
                 VStack{
                     Toggle("Are you typically social?", isOn: $isSocial)
+                        .padding(.bottom, 15)
                         .onChange(of: isSocial) { value in
                             userPreferences.socialInteraction = value
                         }
                     
                     Toggle("Do you exercise on a regular basis?", isOn: $exercisesRegularly)
+                        .padding(.bottom, 15)
                         .onChange(of: exercisesRegularly) { value in
                             userPreferences.exercise = value
                         }
                     
                     Toggle("Do you experience stress?", isOn: $experiencesStress)
+                        .padding(.bottom, 15)
                         .onChange(of: experiencesStress) { value in
                             userPreferences.stress = value
                         }
                     
                     Toggle("Do you experience anxiety?", isOn: $experiencesAnxiety)
+                        .padding(.bottom, 15)
                         .onChange(of: experiencesAnxiety) { value in
                             userPreferences.anxiety = value
                         }
                     
                     Toggle("Do you experience depression?", isOn: $experiencesDepression)
+                        .padding(.bottom, 15)
                         .onChange(of: experiencesDepression){ value in
                             userPreferences.depression = value
                         }
                 }
+                .padding(.leading)
                 .padding(.trailing, 14.0)
-                //.frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height * 0.5)
-                //.background(Color.blue)
+                .frame(width: UIScreen.main.bounds.width * 0.96, height: UIScreen.main.bounds.height * 0.35)
+                .background(Color.white.opacity(0.2))
+                .cornerRadius(20)
                 .cornerRadius(12)
+                .foregroundColor(Color.white)
+
                 Spacer()
             }
             .padding(27.0)
