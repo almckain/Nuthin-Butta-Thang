@@ -13,17 +13,14 @@ struct OnboardingView: View {
         TabView{
             PageView(
                 currentView: AnyView(TrackingPreferenceView()),
-                lastPage: false,
                 shouldShowOnBoarding: $shouldShowOnboarding
             )
             PageView(
                 currentView: AnyView(ColorThemeView()),
-                lastPage: false,
                 shouldShowOnBoarding: $shouldShowOnboarding
             )
             PageView(
-                currentView: AnyView(UserAgreement()),
-                lastPage: true,
+                currentView: AnyView(UserAgreement(shouldShowOnBoarding: $shouldShowOnboarding)),
                 shouldShowOnBoarding: $shouldShowOnboarding
             )
             /*
@@ -34,6 +31,8 @@ struct OnboardingView: View {
              */
         }
         .tabViewStyle(PageTabViewStyle())
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+
     }
 }
 

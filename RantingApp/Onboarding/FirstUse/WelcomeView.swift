@@ -26,12 +26,6 @@ struct WelcomeView: View {
             .background(Color(red: 99/255, green: 56/255, blue: 174/255))
             .cornerRadius(20)
             
-            let features = [
-                "Getting upset? Thoughts are spiraling? Enter a rant session!",
-                "Set some self care reminders!",
-                "Read articles that may help!",
-
-            ]
             VStack{
                 Text("Enter a rant session whenever you feel upset!")
                     .font(.title3)
