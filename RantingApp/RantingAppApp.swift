@@ -14,9 +14,14 @@ struct RantAppApp: App {
     
     var body: some Scene {
         WindowGroup {
+            ContentView()
+                .environmentObject(sessionManager)
+                .environmentObject(userPreferences)
+            /*
             HomeScreenView()
                 .environmentObject(sessionManager)
                 .environmentObject(userPreferences)
+             */
                     
         }
     }
