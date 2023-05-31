@@ -9,22 +9,33 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var selectedTab: Tab = .house
+    
     @EnvironmentObject var userPreferences: UserPreferences
     @EnvironmentObject var sessionManager: RantSessionManager
     
+    init(){
+        UITabBar.appearance().isHidden = true
+    }
+    
     var body: some View {
-        TabView {
-            HomeScreenView().environmentObject(userPreferences)
-                .environmentObject(sessionManager)
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("Home")
-                }
-            SettingsView()
-                .tabItem {
-                    Image(systemName: "gear")
-                    Text("Settings")
-                }
+        ZStack{
+            switch selectedTab {
+            case .house:
+                HomeScreenView()
+            case .calendar:
+                MoodCalendarView()
+            case .list_clipboard:
+                PastRantSessionsView()
+            case .list:
+                RemindersView()
+            case .gearshape:
+                SettingsView()
+            }
+            VStack{
+                Spacer()
+                CustomTabBar(selectedTab: $selectedTab).environmentObject(userPreferences)
+            }
         }
     }
 }
