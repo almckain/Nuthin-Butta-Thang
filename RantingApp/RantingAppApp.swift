@@ -17,11 +17,7 @@ struct RantAppApp: App {
             ContentView()
                 .environmentObject(sessionManager)
                 .environmentObject(userPreferences)
-            /*
-            HomeScreenView()
-                .environmentObject(sessionManager)
-                .environmentObject(userPreferences)
-             */
+
                     
         }
     }
