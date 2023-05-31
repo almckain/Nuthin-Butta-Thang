@@ -52,7 +52,7 @@ struct WelcomeView: View {
             .frame(width: UIScreen.main.bounds.width * 0.96, height: UIScreen.main.bounds.height * 0.4)
             .background(Color.white.opacity(0.2))
             .cornerRadius(20)
-            
+            //this is a comment
             Spacer()
         }
     }
