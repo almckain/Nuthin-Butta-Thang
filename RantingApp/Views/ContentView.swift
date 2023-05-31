@@ -14,18 +14,18 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            HomeScreenView().environmentObject(userPreferences).environmentObject(sessionManager)
+            HomeScreenView().environmentObject(userPreferences)
+                .environmentObject(sessionManager)
                 .tabItem {
-                  Image(systemName: "house")
-                  Text("Home")
-            }
+                    Image(systemName: "house")
+                    Text("Home")
+                }
             SettingsView()
                 .tabItem {
-                  Image(systemName: "gear")
-                  Text("Settings")
-            }
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
         }
-
     }
 }
 

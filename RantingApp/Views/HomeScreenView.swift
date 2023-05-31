@@ -13,8 +13,6 @@ struct HomeScreenView: View {
     @State private var affirmation: String = ""
     @EnvironmentObject var userPreferences: UserPreferences
     @EnvironmentObject var sessionManager: RantSessionManager
-    
-    let fetchTimer = Timer.publish(every: 3600, on: .main, in: .common).autoconnect()
 
     //For testing regarding the onboarding
     init(){

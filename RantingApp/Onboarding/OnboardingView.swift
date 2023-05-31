@@ -23,7 +23,7 @@ struct OnboardingView: View {
             
             TabView{
                 PageView(
-                    currentView: AnyView(WelcomeView()),
+                    currentView: AnyView(WelcomeView().ignoresSafeArea()),
                     shouldShowOnBoarding: $shouldShowOnboarding)
                 PageView(
                     currentView: AnyView(TrackingPreferenceView()),
@@ -49,6 +49,8 @@ struct OnboardingView: View {
         }
     }
 }
+
+
 
 /*
  struct OnboardingView_Previews: PreviewProvider {
