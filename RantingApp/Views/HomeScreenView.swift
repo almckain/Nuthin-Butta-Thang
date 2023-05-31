@@ -15,11 +15,11 @@ struct HomeScreenView: View {
     @EnvironmentObject var sessionManager: RantSessionManager
 
     //For testing regarding the onboarding
-    /*
+    
     init(){
         shouldShowOnboarding = true
     }
-    */
+    
      
     var body: some View {
         
