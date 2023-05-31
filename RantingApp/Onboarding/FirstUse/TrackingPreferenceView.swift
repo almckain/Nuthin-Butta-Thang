@@ -23,6 +23,11 @@ struct TrackingPreferenceView: View {
         ZStack{
             VStack {
                 VStack{
+                    /**
+                     
+                        WHENEVER EDITING TEXT, CHANGE BACKGROUND COLOR FROM WHITE TO BLUE (or whatever, you want) SWITCH BACK TO WHITE AFTERWARDS THOUGH
+                     
+                     */
                     HStack{
                         Text("Please select all that apply")
                             .font(.title)

@@ -16,6 +16,8 @@
 		6E2B8CFC2A1D85DB00396722 /* RantSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B8CFB2A1D85DB00396722 /* RantSessionView.swift */; };
 		6E385F972A23E96600C4909A /* UserAgreement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E385F962A23E96600C4909A /* UserAgreement.swift */; };
 		6E385F992A23EAAB00C4909A /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E385F982A23EAAB00C4909A /* PageView.swift */; };
+		6E492C942A27EA1300FF8F69 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E492C932A27EA1300FF8F69 /* CustomTabBar.swift */; };
+		6E492C972A27FF0000FF8F69 /* RemindersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E492C962A27FF0000FF8F69 /* RemindersView.swift */; };
 		6E4F9BE72A1EBD6F0000CF78 /* SessionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9BE62A1EBD6F0000CF78 /* SessionCard.swift */; };
 		6E4F9BE92A1F2C6B0000CF78 /* SessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9BE82A1F2C6B0000CF78 /* SessionDetailView.swift */; };
 		6E4F9BEB2A1FD9500000CF78 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9BEA2A1FD9500000CF78 /* HomeScreenView.swift */; };
@@ -46,6 +48,8 @@
 		6E2B8CFB2A1D85DB00396722 /* RantSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RantSessionView.swift; sourceTree = "<group>"; };
 		6E385F962A23E96600C4909A /* UserAgreement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgreement.swift; sourceTree = "<group>"; };
 		6E385F982A23EAAB00C4909A /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		6E492C932A27EA1300FF8F69 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		6E492C962A27FF0000FF8F69 /* RemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersView.swift; sourceTree = "<group>"; };
 		6E4F9BE62A1EBD6F0000CF78 /* SessionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCard.swift; sourceTree = "<group>"; };
 		6E4F9BE82A1F2C6B0000CF78 /* SessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailView.swift; sourceTree = "<group>"; };
 		6E4F9BEA2A1FD9500000CF78 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 		6E2B8CE82A1D84BA00396722 /* RantingApp */ = {
 			isa = PBXGroup;
 			children = (
+				6E492C952A27FEE900FF8F69 /* SelfCareReminders */,
 				6E4F9C042A230AA10000CF78 /* Onboarding */,
 				6E4F9BF82A2177680000CF78 /* MoodTracking */,
 				6E4F9BEC2A200E850000CF78 /* Views */,
@@ -104,6 +109,7 @@
 				6E4F9BED2A200EBC0000CF78 /* RantSession */,
 				6E4F9BF62A2138490000CF78 /* Affirmation */,
 				6E4F9BF42A2025C30000CF78 /* ArticleCard.swift */,
+				6E492C932A27EA1300FF8F69 /* CustomTabBar.swift */,
 			);
 			path = RantingApp;
 			sourceTree = "<group>";
@@ -114,6 +120,14 @@
 				6E2B8CF02A1D84BA00396722 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6E492C952A27FEE900FF8F69 /* SelfCareReminders */ = {
+			isa = PBXGroup;
+			children = (
+				6E492C962A27FF0000FF8F69 /* RemindersView.swift */,
+			);
+			path = SelfCareReminders;
 			sourceTree = "<group>";
 		};
 		6E4F9BEC2A200E850000CF78 /* Views */ = {
@@ -254,8 +268,10 @@
 			files = (
 				6E2B8CEC2A1D84BA00396722 /* PastRantSessionsView.swift in Sources */,
 				6EA310F32A259E33009A807F /* SettingsView.swift in Sources */,
+				6E492C972A27FF0000FF8F69 /* RemindersView.swift in Sources */,
 				6E4F9BE92A1F2C6B0000CF78 /* SessionDetailView.swift in Sources */,
 				6E4F9C082A2313B70000CF78 /* ColorThemeView.swift in Sources */,
+				6E492C942A27EA1300FF8F69 /* CustomTabBar.swift in Sources */,
 				6E4F9C0A2A232D500000CF78 /* OnboardingView.swift in Sources */,
 				6E4F9BFA2A2177AA0000CF78 /* Day.swift in Sources */,
 				6E385F992A23EAAB00C4909A /* PageView.swift in Sources */,

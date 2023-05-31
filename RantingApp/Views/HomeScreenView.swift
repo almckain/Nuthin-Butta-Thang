@@ -13,14 +13,13 @@ struct HomeScreenView: View {
     @State private var affirmation: String = ""
     @EnvironmentObject var userPreferences: UserPreferences
     @EnvironmentObject var sessionManager: RantSessionManager
-    
-    let fetchTimer = Timer.publish(every: 3600, on: .main, in: .common).autoconnect()
 
     //For testing regarding the onboarding
+    /*
     init(){
         shouldShowOnboarding = true
     }
-    
+    */
      
     var body: some View {
         
@@ -54,12 +53,13 @@ struct HomeScreenView: View {
                                 .italic()
                                 .multilineTextAlignment(.center)
                                 .padding(10)
+                                .foregroundColor(Color.white)
 
                             Spacer()
                         }
                         .fixedSize(horizontal: false, vertical: true)
                         .frame(width: UIScreen.main.bounds.width * 0.95)
-                        .background(Color.white)
+                        .background(Color.white.opacity(0.2))
                         .cornerRadius(20)
                         
                         //Recommended Articles
@@ -67,6 +67,8 @@ struct HomeScreenView: View {
                             HStack{
                                 Text("Recommended Articles")
                                     .padding(.leading, 20.0)
+                                    .foregroundColor(Color.white)
+
                                 Spacer()
                             }
                             HStack{
@@ -81,7 +83,7 @@ struct HomeScreenView: View {
                             }
                         }
                         .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height * 0.23)
-                        .background(Color.white)
+                        .background(Color.white.opacity(0.2))
                         .cornerRadius(20)
                         
                         //Calendar
@@ -89,10 +91,14 @@ struct HomeScreenView: View {
                             Text("Calender")
                                 .font(.title2)
                                 .padding()
+                                .foregroundColor(Color.white)
+
                             HStack{
                                 Text("Select day")
                                     .font(.caption)
                                     .padding(.leading, 20)
+                                    .foregroundColor(Color.white)
+
                                 Spacer()
                             }
                             HStack{
@@ -100,16 +106,19 @@ struct HomeScreenView: View {
                                 ForEach(0..<7) { index in
                                     ZStack {
                                         Circle()
-                                            .stroke(Color.gray, lineWidth: 1)
+                                            .stroke(Color.white, lineWidth: 1)
                                             .frame(width: 40, height: 40)
+
                                         Text(days[index])
+                                            .foregroundColor(Color.white)
+
                                     }
                                 }
                             }
                             .padding()
                         }
                         .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height * 0.23)
-                        .background(Color.white)
+                        .background(Color.white.opacity(0.2))
                         .cornerRadius(20)
                         
                         //Recent Rants

@@ -49,7 +49,11 @@ struct ColorThemeView: View {
         ]
         
             
-            
+        /**
+         
+            WHENEVER EDITING TEXT, CHANGE BACKGROUND COLOR FROM WHITE TO BLUE (or whatever, you want) SWITCH BACK TO WHITE AFTERWARDS THOUGH
+         
+         */
             VStack{
                 Text("Select Theme")
                     .foregroundColor(Color.white)

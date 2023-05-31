@@ -13,8 +13,7 @@ struct PageView: View {
     
     var body: some View {
         VStack{
-            currentView
-            
+            currentView.ignoresSafeArea()
         }
     }
 }
