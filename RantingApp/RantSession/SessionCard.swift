@@ -24,7 +24,7 @@ struct SessionCard: View {
             }
             Spacer()
         }
-        .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height * 0.10)
+        .frame(width: UIScreen.main.bounds.width * 0.90, height: UIScreen.main.bounds.height * 0.10)
         .background(Color.white)
         .cornerRadius(12)
         
