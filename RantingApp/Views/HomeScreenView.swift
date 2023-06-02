@@ -15,10 +15,11 @@ struct HomeScreenView: View {
     @EnvironmentObject var sessionManager: RantSessionManager
 
     //For testing regarding the onboarding
-    
+    /*
     init(){
         shouldShowOnboarding = true
     }
+     */
     
      
     var body: some View {
@@ -125,13 +126,32 @@ struct HomeScreenView: View {
                         VStack{
                             HStack{
                                 Text("Recent Rants")
+                                    .font(.title3)
                                 Spacer()
                                 NavigationLink(destination: PastRantSessionsView().environmentObject(sessionManager).environmentObject(userPreferences)) {
                                     Text("All Rants")
+                                        .frame(width: 80, height: 30)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 20)
+                                                .stroke(Color.white, lineWidth: 2)
+                                        )
                                 }
                             }
-                            .padding()
+                            .foregroundColor(Color.white)
+                            .padding(.top, 20)
+                            .padding(.horizontal, 20)
+                            
+                            Divider().background(Color.white)
+                            
+                            generateSessionCards()
+                            Spacer()
                         }
+                        .frame(width: UIScreen.main.bounds.width * 0.95)
+                        
+                        .background(Color.white.opacity(0.2))
+                        .cornerRadius(20)
+                        
+                        Text("").padding(.bottom, 40)
                         /*
                         NavigationLink(destination: MoodCalendarView()) {
                             Text("Rant Calendar")
@@ -161,6 +181,14 @@ struct HomeScreenView: View {
                 affirmation = BackupAffirmation().getBackupAffirmation()
             } else {
                 affirmation = fetchedAffirmation
+            }
+        }
+    }
+    
+    func generateSessionCards() -> some View{
+        ForEach(sessionManager.sessions) { session in
+            NavigationLink(destination: SessionDetailView(session: session)){
+                SessionCard(session: session)
             }
         }
     }
