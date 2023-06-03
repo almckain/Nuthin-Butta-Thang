@@ -11,6 +11,7 @@ struct PastRantSessionsView: View {
     
     @EnvironmentObject var sessionManager: RantSessionManager
     @EnvironmentObject var userPreferences: UserPreferences
+    @EnvironmentObject var eventStore: EventStore
     
     var body: some View{
         ZStack{
@@ -19,6 +20,7 @@ struct PastRantSessionsView: View {
                 .ignoresSafeArea()
             VStack{
                 //Title Text
+                /*
                 HStack{
                     Text("Rant Sessions")
                         .font(.system(size: 36, weight: .bold))
@@ -26,28 +28,34 @@ struct PastRantSessionsView: View {
                         .padding(.leading, 15)
                     Spacer()
                 }
+                 */
                 //New Rant Session Button
-                Divider()
-                HStack{
-                    Spacer()
-                    NavigationLink(destination: RantSessionView().environmentObject(sessionManager).environmentObject(userPreferences)) {
-                        Text("New Rant Session")
-                            .font(.body)
-                            .fontWeight(.bold)
-                            .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height * 0.05)
-                            .background(Color.white)
-                            .cornerRadius(12)
+                NavigationStack{
+                    ScrollView{
+                        MoodCalendarView(interval: DateInterval(start: .distantPast, end: .distantFuture))
+                            .navigationTitle("Journal Entries")
+                                
+                        Divider()
+                        HStack{
+                            Spacer()
+                            NavigationLink(destination: RantSessionView().environmentObject(sessionManager).environmentObject(userPreferences)) {
+                                Text("New Rant Session")
+                                    .font(.body)
+                                    .fontWeight(.bold)
+                                    .frame(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.height * 0.05)
+                                    .background(Color.white)
+                                    .cornerRadius(12)
+                            }
+                            Spacer()
+                        }
+                        Divider()
+                        
+                        VStack{
+                            generateSessionCards()
+                            
+                        }
                     }
-                    Spacer()
                 }
-                Divider()
-                ScrollView{
-                    VStack{
-                        generateSessionCards()
-
-                    }
-                }
-                 
                 Spacer()
             }
         }
