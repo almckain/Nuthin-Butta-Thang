@@ -11,7 +11,6 @@ struct PastRantSessionsView: View {
     
     @EnvironmentObject var sessionManager: RantSessionManager
     @EnvironmentObject var userPreferences: UserPreferences
-    @EnvironmentObject var eventStore: EventStore
     
     var body: some View{
         ZStack{

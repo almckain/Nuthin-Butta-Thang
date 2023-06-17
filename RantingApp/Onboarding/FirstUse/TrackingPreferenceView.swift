@@ -13,11 +13,31 @@ struct TrackingPreferenceView: View {
 
     @State private var navigateToHomeScreen = false
 
-    @AppStorage("isSocial") private var isSocial = false
-    @AppStorage("exercisesRegularly") private var exercisesRegularly = false
-    @AppStorage("experiencesStress") private var experiencesStress = false
-    @AppStorage("experiencesAnxiety") private var experiencesAnxiety = false
-    @AppStorage("experiencesDepression") private var experiencesDepression = false
+    @AppStorage("isSocial") private var isSocial = false {
+        didSet {
+            userPreferences.socialInteraction = isSocial
+        }
+    }
+    @AppStorage("exercisesRegularly") private var exercisesRegularly = false {
+        didSet {
+            userPreferences.exercise = exercisesRegularly
+        }
+    }
+    @AppStorage("experiencesStress") private var experiencesStress = false {
+        didSet {
+            userPreferences.stress = experiencesStress
+        }
+    }
+    @AppStorage("experiencesAnxiety") private var experiencesAnxiety = false {
+        didSet {
+            userPreferences.anxiety = experiencesAnxiety
+        }
+    }
+    @AppStorage("experiencesDepression") private var experiencesDepression = false {
+        didSet {
+            userPreferences.depression = experiencesDepression
+        }
+    }
 
     var body: some View {
         ZStack{
@@ -92,6 +112,13 @@ struct TrackingPreferenceView: View {
                 Spacer()
             }
             .padding(27.0)
+            .onAppear {
+                userPreferences.socialInteraction = isSocial
+                userPreferences.exercise = exercisesRegularly
+                userPreferences.stress = experiencesStress
+                userPreferences.anxiety = experiencesAnxiety
+                userPreferences.depression = experiencesDepression
+            }
         }
     }
 }

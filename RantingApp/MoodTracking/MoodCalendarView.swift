@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MoodCalendarView: UIViewRepresentable {
     let interval: DateInterval
-    @ObservedObject var eventStore: EventStore
     
     func makeUIView(context: Context) -> UICalendarView{
         let view = UICalendarView()
