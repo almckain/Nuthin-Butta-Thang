@@ -24,7 +24,7 @@ struct ContentView: View {
             case .house:
                 HomeScreenView()
             case .calendar:
-                MoodCalendarView()
+                MoodCalendarView(interval: DateInterval(start: .distantPast, end: .distantFuture))
             case .list_clipboard:
                 PastRantSessionsView()
             case .list:

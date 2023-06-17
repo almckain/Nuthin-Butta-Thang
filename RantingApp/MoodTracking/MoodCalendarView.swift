@@ -7,15 +7,25 @@
 
 import SwiftUI
 
-struct MoodCalendarView: View {
-    var body: some View {
-        Text("Calendar")
+struct MoodCalendarView: UIViewRepresentable {
+    let interval: DateInterval
+    
+    func makeUIView(context: Context) -> UICalendarView{
+        let view = UICalendarView()
+        view.calendar = Calendar(identifier: .gregorian)
+        view.availableDateRange = interval
+        return view
+    }
+    
+    func updateUIView(_ uiView: UICalendarView, context: Context) {
+        
     }
 }
  
+/*
  struct MoodCalendarView_Previews: PreviewProvider {
  static var previews: some View {
  MoodCalendarView()
  }
  }
- 
+ */
