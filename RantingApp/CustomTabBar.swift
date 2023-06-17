@@ -11,7 +11,6 @@ enum Tab: String, CaseIterable{
     //Names must be the same as an SF Symbol
     case house
     case calendar
-    case list_clipboard
     case list
     case gearshape
     
@@ -20,9 +19,6 @@ enum Tab: String, CaseIterable{
         switch self {
         case .house:
             return "house"
-            
-        case .list_clipboard:
-            return "list.clipboard"
             
         case .calendar:
             return "calendar.circle"

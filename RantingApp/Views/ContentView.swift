@@ -25,8 +25,6 @@ struct ContentView: View {
                 HomeScreenView()
             case .calendar:
                 MoodCalendarView(interval: DateInterval(start: .distantPast, end: .distantFuture))
-            case .list_clipboard:
-                PastRantSessionsView()
             case .list:
                 RemindersView()
             case .gearshape:
