@@ -143,7 +143,7 @@ struct HomeScreenView: View {
                             
                             Divider().background(Color.white)
                             
-                            generateSessionCards()
+                            //generateSessionCards()
                             Spacer()
                         }
                         .frame(width: UIScreen.main.bounds.width * 0.95)

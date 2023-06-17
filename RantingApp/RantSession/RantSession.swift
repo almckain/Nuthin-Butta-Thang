@@ -12,7 +12,7 @@ struct RantSession: Identifiable{
     let id = UUID()
     let text: String
     let emoji: String
-    let date: String
+    let date: Date
     let socialInteraction: Bool
     let exercise: Bool
     let stressLevel: Int

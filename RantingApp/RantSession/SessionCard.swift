@@ -11,6 +11,13 @@ struct SessionCard: View {
     
     var session : RantSession
     
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        return formatter
+    }()
+
+    
     var body: some View {
         HStack{
             Text(session.emoji)
@@ -19,7 +26,7 @@ struct SessionCard: View {
             VStack(alignment: .leading){
                 Text(getRantPreview(for: session.text))
                     .font(.title2)
-                Text("Created: " + session.date)
+                Text("Created: " + dateFormatter.string(from: session.date))
                     .font(.caption)
             }
             Spacer()
