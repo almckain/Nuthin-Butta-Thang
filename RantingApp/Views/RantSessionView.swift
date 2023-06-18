@@ -101,7 +101,8 @@ struct RantSessionView: View {
             }
             
             Button(action: {
-                sessionManager.addSession(withText: journalText, withEmoji: selectedEmoji, withDate: currentDate, withSocialInteraction: social, withExercise: exercise, withStressLevel: stressLevel, withProductivityLevel: productivityLevel, withAnxietyLevel: anxietyLevel, withDepressionLevel: depressionLevel)
+                /*
+                sessionManager.addSession(withText: journalText, withEmoji: selectedEmoji, withDate: currentDate, withSocialInteraction: social, withExercise: exercise, withStressLevel: stressLevel, withProductivityLevel: productivityLevel, withAnxietyLevel: anxietyLevel, withDepressionLevel: depressionLevel)*/
                 presentationMode.wrappedValue.dismiss()
             }) {
                 Text("Save")

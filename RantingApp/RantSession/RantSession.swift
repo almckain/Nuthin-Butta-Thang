@@ -9,14 +9,27 @@ import Foundation
 import SwiftUI
 
 struct RantSession: Identifiable{
-    let id = UUID()
-    let text: String
-    let emoji: String
-    let date: Date
-    let socialInteraction: Bool
-    let exercise: Bool
-    let stressLevel: Int
-    let productivityLevel: Int
-    let anxietyLevel: Int
-    let depressionLevel: Int
+    var id: String
+    var text: String
+    var emoji: String
+    var date: Date
+    var socialInteraction: Bool
+    var exercise: Bool
+    var stressLevel: Int
+    var productivityLevel: Int
+    var anxietyLevel: Int
+    var depressionLevel: Int
+    
+    init(id: String = UUID().uuidString, text: String, emoji: String, date: Date, socialInteraction: Bool, exercise: Bool, stressLevel: Int, productivityLevel: Int, anxietyLevel: Int, depressionLevel: Int) {
+        self.id = id
+        self.text = text
+        self.emoji = emoji
+        self.date = date
+        self.socialInteraction = socialInteraction
+        self.exercise = exercise
+        self.stressLevel = stressLevel
+        self.productivityLevel = productivityLevel
+        self.anxietyLevel = anxietyLevel
+        self.depressionLevel = depressionLevel
+    }
 }

@@ -38,7 +38,32 @@ class RantSessionManager: ObservableObject {
         
         sessions.append(contentsOf: [defaultSession1, defaultSession2])
     }
-
+    
+    func delete(_ session: RantSession){
+        if let index = sessions.firstIndex(where: {$0.id == session.id}){
+            sessions.remove(at: index)
+        }
+    }
+    
+    func add(_ session: RantSession){
+        sessions.append(session)
+    }
+    
+    func update(_ session: RantSession){
+        if let index = sessions.firstIndex(where: {$0.id == session.id}){
+            sessions[index].text = session.text
+            sessions[index].emoji = session.emoji
+            sessions[index].date = session.date
+            sessions[index].socialInteraction = session.socialInteraction
+            sessions[index].exercise = session.exercise
+            sessions[index].stressLevel = session.stressLevel
+            sessions[index].productivityLevel = session.productivityLevel
+            sessions[index].anxietyLevel = session.anxietyLevel
+            sessions[index].depressionLevel = session.depressionLevel
+        }
+    }
+    
+    /*
     func addSession(
         withText text: String,
         withEmoji emoji: String,
@@ -64,4 +89,5 @@ class RantSessionManager: ObservableObject {
 
         sessions.append(newSession)
     }
+     */
 }

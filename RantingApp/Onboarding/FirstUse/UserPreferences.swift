@@ -13,9 +13,9 @@ class UserPreferences: ObservableObject {
     
     //Mood tracking
     @Published var socialInteraction: Bool = false
-    @Published var exercise: Bool = false
+    @Published var exercise: Bool = true
     @Published var stress: Bool = false
-    @Published var anxiety: Bool = false
+    @Published var anxiety: Bool = true
     @Published var depression: Bool = false
     
     //Color Theme

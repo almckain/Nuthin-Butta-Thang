@@ -15,11 +15,11 @@ struct HomeScreenView: View {
     @EnvironmentObject var sessionManager: RantSessionManager
 
     //For testing regarding the onboarding
-    /*
+    
     init(){
         shouldShowOnboarding = true
     }
-    */
+    
     
      
     var body: some View {
@@ -128,7 +128,7 @@ struct HomeScreenView: View {
                                 Text("Recent Rants")
                                     .font(.title3)
                                 Spacer()
-                                NavigationLink(destination: PastRantSessionsView().environmentObject(sessionManager).environmentObject(userPreferences)) {
+                                NavigationLink(destination: EntriesListView().environmentObject(JournalStore(preview: true)).environmentObject(userPreferences)) {
                                     Text("All Rants")
                                         .frame(width: 80, height: 30)
                                         .overlay(
