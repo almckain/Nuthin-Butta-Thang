@@ -12,7 +12,6 @@ struct HomeScreenView: View {
     @AppStorage("shouldShowOnBoarding") var shouldShowOnboarding: Bool = true
     @State private var affirmation: String = ""
     @EnvironmentObject var userPreferences: UserPreferences
-    @EnvironmentObject var sessionManager: RantSessionManager
 
     //For testing regarding the onboarding
     
@@ -184,20 +183,11 @@ struct HomeScreenView: View {
             }
         }
     }
-    
-    func generateSessionCards() -> some View{
-        ForEach(sessionManager.sessions) { session in
-            NavigationLink(destination: SessionDetailView(session: session)){
-                SessionCard(session: session)
-            }
-        }
-    }
 }
 
 struct HomeScreenView_Previews: PreviewProvider {
     static var previews: some View {
         HomeScreenView()
-            .environmentObject(RantSessionManager())
             .environmentObject(UserPreferences())
     }
 }

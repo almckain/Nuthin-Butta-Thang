@@ -9,13 +9,11 @@ import SwiftUI
 
 @main
 struct RantAppApp: App {
-    @StateObject var sessionManager = RantSessionManager()
     @StateObject var userPreferences = UserPreferences()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(sessionManager)
                 .environmentObject(userPreferences)
 
                     

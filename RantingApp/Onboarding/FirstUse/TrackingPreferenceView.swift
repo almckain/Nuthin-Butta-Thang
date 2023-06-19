@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TrackingPreferenceView: View {
     @EnvironmentObject var userPreferences: UserPreferences
-    @EnvironmentObject var sessionManager: RantSessionManager
 
     @State private var navigateToHomeScreen = false
 
@@ -129,6 +128,5 @@ struct TrackingPreferenceView_Previews: PreviewProvider {
     static var previews: some View {
         TrackingPreferenceView()
             .environmentObject(UserPreferences())
-            .environmentObject(RantSessionManager())
     }
 }
