@@ -18,7 +18,6 @@ enum EntryFormType: Identifiable, View{
             return "update"
         }
     }
-    
     var body: some View{
         switch self{
         case .new:

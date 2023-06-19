@@ -13,7 +13,7 @@ struct EntriesListView: View {
     var body: some View {
         NavigationStack{
             List{
-                ForEach(myEntries.journalEntries.sorted {$0.date < $1.date}) { entry in
+                ForEach(myEntries.journalEntries.sorted {$0.date > $1.date}) { entry in
                     ListViewRows(entry: entry, formType: $formType)
                         .swipeActions{
                             Button(role: .destructive){

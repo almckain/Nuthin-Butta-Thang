@@ -33,6 +33,7 @@ class EntryFormViewModel: ObservableObject{
         productivityLevel = entry.productivityLevel
         anxietyLevel = entry.anxietyLevel
         depressionLevel = entry.depressionLevel
+        id = entry.id
     }
     
     var incomplete: Bool{

@@ -12,13 +12,16 @@ struct ListViewRows: View {
     @Binding var formType: EntryFormType?
     var body: some View {
         HStack{
-            VStack(alignment: .leading){
-                HStack{
-                    Text(entry.emoji)
-                        .font(.system(size: 40))
+            HStack(alignment: .center){
+                Text(entry.emoji)
+                    .font(.system(size: 50))
+                VStack(alignment: .leading){
                     Text(entry.text)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                    Text(entry.date.formatted(date: .abbreviated, time: .omitted))
                 }
-                Text(entry.date.formatted(date: .abbreviated, time: .shortened))
+                
 
             }
             Spacer()

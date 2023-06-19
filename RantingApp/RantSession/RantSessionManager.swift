@@ -7,6 +7,9 @@
 
 import Foundation
 
+//OBSELETE
+
+
 class RantSessionManager: ObservableObject {
     @Published var sessions: [RantSession] = []
     @Published var userPreferences = UserPreferences()
@@ -91,3 +94,4 @@ class RantSessionManager: ObservableObject {
     }
      */
 }
+
