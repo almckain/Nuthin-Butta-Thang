@@ -23,6 +23,10 @@ class UserPreferences: ObservableObject {
     @Published var middleColor: Color = Color(red: 166/255, green: 136/255, blue: 240/255) //Middle
     @Published var secondaryColor: Color = Color(red: 185/255, green: 158/255, blue: 229/255) //Lighter
     
+    @Published var lightPurple: Color = Color(red: 172/255, green: 107/255, blue: 255/255)
+    @Published var darkPurple: Color = Color(red: 167/255, green: 104/255, blue: 229/255)
+    @Published var uiGrey: Color = Color(red: 223/255, green: 223/255, blue: 223/255).opacity(0.30)
+    
     @Published var selectedColorName: String = "purple" // Default color
 
 

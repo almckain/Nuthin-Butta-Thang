@@ -12,6 +12,8 @@ struct ContentView: View {
     @State private var selectedTab: Tab = .house
     
     @EnvironmentObject var userPreferences: UserPreferences
+    @EnvironmentObject var myEntries: JournalStore
+
     
     init(){
         UITabBar.appearance().isHidden = true
@@ -34,12 +36,14 @@ struct ContentView: View {
                 CustomTabBar(selectedTab: $selectedTab).environmentObject(userPreferences)
             }
         }
+         
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(JournalStore(preview: true))
             .environmentObject(UserPreferences())
     }
 }

@@ -12,13 +12,15 @@ struct HomeScreenView: View {
     @AppStorage("shouldShowOnBoarding") var shouldShowOnboarding: Bool = true
     @State private var affirmation: String = ""
     @EnvironmentObject var userPreferences: UserPreferences
+    @EnvironmentObject var myEntries: JournalStore
+
 
     //For testing regarding the onboarding
-    
+    /*
     init(){
         shouldShowOnboarding = true
     }
-    
+    */
     
      
     var body: some View {
@@ -149,6 +151,7 @@ struct HomeScreenView: View {
                         
                         .background(Color.white.opacity(0.2))
                         .cornerRadius(20)
+                        
                         
                         Text("").padding(.bottom, 40)
                         /*
