@@ -75,6 +75,7 @@ struct HomeView: View {
                                 RoundedRectangle(cornerRadius: 12)
                                     .fill(userPreference.darkPurple)
                                     .frame(height: 40)
+                                    .shadow(color: .black.opacity(0.10), radius: 4, x: 0, y: 8)
                                 
                                 Text("View Today's Entry")
                                     .fontWeight(.light)
@@ -98,11 +99,11 @@ struct HomeView: View {
                         .padding(EdgeInsets(top: 1, leading: 15, bottom: 5, trailing: 15))
                         
                         ZStack{
-                            Rectangle()
-                                .foregroundColor(.clear)
+                            RoundedRectangle(cornerRadius: 22, style: .continuous)
+                                .fill(Color("uiGrey")).opacity(0.3)
                                 .frame(height: 38)
-                                .background(userPreference.uiGrey)
-                                .cornerRadius(27)
+                                .shadow(color: .black.opacity(0.59), radius: 8, x: 0, y: 4)
+
                             HStack{
                                 Text("Service Pet Lucy!")
                                     .padding(.leading, 25)
@@ -120,12 +121,10 @@ struct HomeView: View {
                             .frame(height: 300)
                         Spacer()
                     
-                        //Spacer()
                     }
                 }
             }
             
-            //.navigationTitle("Good morning, Aaron")
         }
     }
     
@@ -143,11 +142,10 @@ struct HomeView: View {
     
     func generateProgressSquare(title: String, value: Int) -> some View{
         ZStack {
-            Rectangle()
-              .foregroundColor(.clear)
-              .frame(width: 108, height: 98)
-              .background(userPreference.uiGrey)
-              .cornerRadius(22)
+            RoundedRectangle(cornerRadius: 22)
+                .fill(Color("uiGrey")).opacity(0.2)
+                .frame(width: 108, height: 98)
+                .shadow(color: .black.opacity(0.50), radius: 4, x: 0, y: 8)
               //.shadow(color: .black.opacity(0.15), radius: 4, x: 0, y: 4)
             VStack {
                 Text(title)
@@ -195,12 +193,10 @@ struct HomeView: View {
     func generateStreakWidget() -> some View{
         ZStack{
             
-            Rectangle()
-              .foregroundColor(.clear)
-              .frame(height: 155)
-              .background(userPreference.uiGrey)
-              .cornerRadius(27)
-              //.shadow(color: .black.opacity(0.15), radius: 8, x: 0, y: 8)
+            RoundedRectangle(cornerRadius: 22)
+                .fill(Color("uiGrey")).opacity(0.2)
+                .frame(height: 155)
+                .shadow(color: .black.opacity(0.50), radius: 3, x: 0, y: 8)
             VStack{
                 HStack{
                     Text("You're on a 4 day streak!")
@@ -224,11 +220,15 @@ struct HomeView: View {
     
     func generatePetPen() -> some View{
         ZStack{
-            Rectangle()
-                .foregroundColor(.clear)
+            RoundedRectangle(cornerRadius: 27, style: .continuous)
+                //.fill(Color.gray).opacity(0.1)
                 .frame(height: 206)
-                .background(Color(red: 0.87, green: 0.87, blue: 0.87).opacity(0.31))
-                .cornerRadius(27)
+                .foregroundStyle(
+                    .gray.gradient.shadow(.inner(color: .black.opacity(0.99), radius: 7, x: 1, y: 1)).opacity(0.1)
+                )
+                //.shadow(color: Color.blue.opacity(0.99), radius: 5, x: 10, y: 0)
+                
+
             
             Image("Pet_Lucy")
                 .resizable()
