@@ -12,19 +12,15 @@ struct PetView: View {
 
     var body: some View {
         ZStack{
-            Rectangle()
-                .foregroundColor(.clear)
+            RoundedRectangle(cornerRadius: 27, style: .continuous)
                 .frame(height: 206)
-                .background(userPreference.uiGrey)
-                .cornerRadius(27)
-                .padding(.leading, 15)
-                .padding(.trailing, 15)
-                
+                .foregroundStyle(
+                    .gray.gradient.shadow(.inner(color: .black.opacity(0.99), radius: 7, x: 1, y: 1)).opacity(0.1)
+                )
             
             Image("Pet_Lucy")
                 .resizable()
                 .frame(width: 68, height: 58)
-            
         }
     }
 }

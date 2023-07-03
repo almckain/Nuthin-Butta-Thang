@@ -12,11 +12,7 @@ struct HomeView: View {
     
     var userPreference: UserPreferences
     
-    @State private var offset = CGSize.zero
-    @State private var flipImage = false
-    let timer = Timer.publish(every: 4, on: .main, in: .common).autoconnect()
-    
-    var enableAnimation = false // Change this to enable or disable the animation
+    @State var selectedtab = "home"
 
     var body: some View {
         NavigationView{
@@ -47,7 +43,7 @@ struct HomeView: View {
                         }.padding(EdgeInsets(top: 1, leading: 15, bottom: 5, trailing: 25))
                         
                         generateStatusBar(progress: status)
-                            .padding(EdgeInsets(top: 5, leading: 15, bottom: 5, trailing: 15))
+                            .padding(EdgeInsets(top: 5, leading: 20, bottom: 5, trailing: 20))
                         
                         HStack{
                             Text("Keep up the good work:")
@@ -113,7 +109,7 @@ struct HomeView: View {
                         .padding(EdgeInsets(top: 15, leading: 15, bottom: 0, trailing: 15))
                         
                         //Generate Pet Pen
-                        generatePetPen()
+                        PetView()
                         .padding(EdgeInsets(top: 0, leading: 15, bottom: 50, trailing: 15))
                         
                         Rectangle()
@@ -215,36 +211,6 @@ struct HomeView: View {
                     generateDayTab(date: "Jul 1", didEnter: true)
                 }
             }
-        }
-    }
-    
-    func generatePetPen() -> some View{
-        ZStack{
-            RoundedRectangle(cornerRadius: 27, style: .continuous)
-                //.fill(Color.gray).opacity(0.1)
-                .frame(height: 206)
-                .foregroundStyle(
-                    .gray.gradient.shadow(.inner(color: .black.opacity(0.99), radius: 7, x: 1, y: 1)).opacity(0.1)
-                )
-                //.shadow(color: Color.blue.opacity(0.99), radius: 5, x: 10, y: 0)
-                
-
-            
-            Image("Pet_Lucy")
-                .resizable()
-                .frame(width: 68, height: 58)
-                .scaleEffect(x: flipImage ? -1 : 1, y: 1, anchor: .center)
-                .offset(offset)
-                .onReceive(timer) { _ in
-                    if enableAnimation {
-                        withAnimation {
-                            let maxX = CGFloat.random(in: -100...100) // adjust as per needed
-                            let maxY = CGFloat.random(in: -100...100) // adjust as per needed
-                            flipImage = maxX > offset.width
-                            offset = CGSize(width: maxX, height: maxY)
-                        }
-                    }
-                }
         }
     }
 }
