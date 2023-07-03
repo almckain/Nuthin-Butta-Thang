@@ -11,12 +11,7 @@ class EntryFormViewModel: ObservableObject{
     @Published var date = Date()
     @Published var text = ""
     @Published var emoji = ""
-    @Published var socialInteraction = false
-    @Published var exercise = false
-    @Published var stressLevel = 0
-    @Published var productivityLevel = 0
-    @Published var anxietyLevel = 0
-    @Published var depressionLevel = 0
+    @Published var title = ""
     
     var id: String?
     var updating: Bool { id != nil }
@@ -27,13 +22,8 @@ class EntryFormViewModel: ObservableObject{
         date = entry.date
         text = entry.text
         emoji = entry.emoji
-        socialInteraction = entry.socialInteraction
-        exercise = entry.exercise
-        stressLevel = entry.stressLevel
-        productivityLevel = entry.productivityLevel
-        anxietyLevel = entry.anxietyLevel
-        depressionLevel = entry.depressionLevel
         id = entry.id
+        title = entry.title
     }
     
     var incomplete: Bool{

@@ -42,12 +42,7 @@ class JournalStore: ObservableObject{
             journalEntries[index].date = entry.date
             journalEntries[index].text = entry.text
             journalEntries[index].emoji = entry.emoji
-            journalEntries[index].socialInteraction = entry.socialInteraction
-            journalEntries[index].exercise = entry.exercise
-            journalEntries[index].stressLevel = entry.stressLevel
-            journalEntries[index].productivityLevel = entry.productivityLevel
-            journalEntries[index].anxietyLevel = entry.anxietyLevel
-            journalEntries[index].depressionLevel = entry.depressionLevel
+            journalEntries[index].title = entry.title
         }
     }
 }

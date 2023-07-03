@@ -36,7 +36,7 @@ struct ListViewRows: View {
 }
 
 struct ListViewRows_Previews: PreviewProvider {
-    static let entry = JournalEntry(text: "I be big sad sometimes because starbucks is expensive.", emoji: "🙃", date: Date(), socialInteraction: false, exercise: true, stressLevel: 0, productivityLevel: 0, anxietyLevel: 2, depressionLevel: 4)
+    static let entry = JournalEntry(text: "I be big sad sometimes because starbucks is expensive.", emoji: "🙃", title: "Starbucks costs money", date: Date())
     static var previews: some View {
         ListViewRows(entry: entry, formType: .constant(.new))
     }

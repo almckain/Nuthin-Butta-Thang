@@ -20,6 +20,63 @@ struct EntryFormView: View {
            
     var body: some View {
         NavigationStack{
+            
+            VStack{
+                Form{
+                    Section{
+                        DatePicker(selection: $viewModel.date, displayedComponents: .date){
+                            Text("Date Created:")
+                        }
+                    }
+                    //Location
+                    
+                    //Picture and emoji selector
+                    Section{
+                        TextField("Title (optional): ", text: $viewModel.title)
+                    }
+                    
+                    Section{
+                        TextField("What's Going on Buddy?", text: $viewModel.text, axis: .vertical)
+                    }
+                    
+                    Section(footer:
+                                HStack{
+                        Spacer()
+                        Button{
+                            if viewModel.updating {
+                                let entry = JournalEntry(id: viewModel.id!,
+                                                         text: viewModel.text,
+                                                         emoji: viewModel.emoji,
+                                                         title: viewModel.title,
+                                                         date: viewModel.date)
+                                journalStore.update(entry)
+                            }else{
+                                let newEntry = JournalEntry(text: viewModel.text,
+                                                            emoji: viewModel.emoji,
+                                                            title: viewModel.title,
+                                                            date: viewModel.date)
+                                journalStore.add(newEntry)
+                            }
+                            dismiss()
+                        }label:{
+                            Text(viewModel.updating ? "Update Journal Entry" :"New Journal Entry")
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .disabled(viewModel.incomplete)
+                        Spacer()
+                    }
+                    ){
+                        EmptyView()
+                    }
+                }
+                .navigationTitle(viewModel.updating ? dateToString(date: viewModel.date) : "Today's Entry")
+                .onAppear{
+                    focus = true
+                }
+            }
+        }
+        /*
+        NavigationStack{
             VStack{
                 Form{
                     DatePicker(selection: $viewModel.date){
@@ -37,63 +94,13 @@ struct EntryFormView: View {
                         }) {
                             Image(systemName: "plus.circle.fill")
                         }
+                        /*
                         .sheet(isPresented: $showingEmojiPicker) {
                             EmojiPickerView(selectedEmoji: $viewModel.emoji, showingEmojiPicker: $showingEmojiPicker)
                         }
+                         */
                     }
                     
-                    if userPreferences.exercise {
-                        Toggle("Did you exercise?", isOn: $viewModel.exercise)
-                    }
-                    
-                    if userPreferences.socialInteraction {
-                        Toggle("Are you social?", isOn: $viewModel.socialInteraction)
-                    }
-                    
-                    if userPreferences.stress {
-                        Text("Stress Level")
-                        HStack {
-                            ForEach(1...5, id: \.self) { level in
-                                Circle()
-                                    .foregroundColor(viewModel.stressLevel >= level ? .blue : .gray)
-                                    .frame(width: 20, height: 20)
-                                    .onTapGesture {
-                                        viewModel.stressLevel = level
-                                    }
-                            }
-                        }
-                    }
-                    
-                    if userPreferences.anxiety {
-                        HStack{
-                            Text("Anxiety Level")
-                            Spacer()
-                            HStack {
-                                ForEach(1...5, id: \.self) { level in
-                                    Circle()
-                                        .foregroundColor(viewModel.anxietyLevel >= level ? .blue : .gray)
-                                        .frame(width: 20, height: 20)
-                                        .onTapGesture {
-                                            viewModel.anxietyLevel = level
-                                        }
-                                }
-                            }
-                        }
-                    }
-                    
-                    if userPreferences.depression {
-                        Text("Depression Level")
-                        HStack{
-                            ForEach(1...5, id: \.self) { level in
-                                Circle()
-                                    .foregroundColor(viewModel.depressionLevel >= level ? .blue : .gray)
-                                    .frame(width: 20, height: 20)
-                                    .onTapGesture {
-                                        viewModel.depressionLevel = level
-                                    }
-                            }
-                        }
-                    }
                     Section(footer:
                                 HStack{
                         Spacer()
@@ -102,24 +109,12 @@ struct EntryFormView: View {
                                 let entry = JournalEntry(id: viewModel.id!,
                                                          text: viewModel.text,
                                                          emoji: viewModel.emoji,
-                                                         date: viewModel.date,
-                                                         socialInteraction: viewModel.socialInteraction,
-                                                         exercise: viewModel.exercise,
-                                                         stressLevel: viewModel.stressLevel,
-                                                         productivityLevel: viewModel.productivityLevel,
-                                                         anxietyLevel: viewModel.anxietyLevel,
-                                                         depressionLevel: viewModel.depressionLevel)
+                                                         date: viewModel.date)
                                 journalStore.update(entry)
                             }else{
                                 let newEntry = JournalEntry(text: viewModel.text,
                                                             emoji: viewModel.emoji,
-                                                            date: viewModel.date,
-                                                            socialInteraction: viewModel.socialInteraction,
-                                                            exercise: viewModel.exercise,
-                                                            stressLevel: viewModel.stressLevel,
-                                                            productivityLevel: viewModel.productivityLevel,
-                                                            anxietyLevel: viewModel.anxietyLevel,
-                                                            depressionLevel: viewModel.depressionLevel)
+                                                            date: viewModel.date)
                                 journalStore.add(newEntry)
                             }
                             dismiss()
@@ -139,15 +134,22 @@ struct EntryFormView: View {
             .onAppear{
                 focus = true
             }
-        }
+        }*/
+    }
+    
+    func dateToString(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter.string(from: date)
     }
 }
-
+/*
 struct EmojiPickerView: View {
     @Binding var selectedEmoji: String
     @Binding var showingEmojiPicker: Bool
     
-    let emojis: [String] = (0x1F600...0x1F64F).compactMap { UnicodeScalar($0)?.description }
+    let emojis: [String] = (0x1F600...0x1F64F).compactMap { String(Character(UnicodeScalar($0))) }
+    
 
     var body: some View {
         VStack(spacing: 20) {
@@ -161,17 +163,18 @@ struct EmojiPickerView: View {
                             .font(.system(size: 32))
                             .padding()
                             .onTapGesture {
-                            self.selectedEmoji = emoji
-                            self.showingEmojiPicker = false
-                        }
+                                self.selectedEmoji = emoji
+                                self.showingEmojiPicker = false
+                            }
                     }
                 }
             }
+            
             .padding(.horizontal)
         }
     }
 }
-
+*/
 struct EntryFormView_Previews: PreviewProvider {
     static var previews: some View {
         EntryFormView(viewModel: EntryFormViewModel())
@@ -179,3 +182,39 @@ struct EntryFormView_Previews: PreviewProvider {
             .environmentObject(UserPreferences())
     }
 }
+/*
+struct EmojiView: View{
+    var body: some View{
+        ScrollView(.vertical, showsIndicators: false){
+            VStack(spacing: 15){
+                ForEach(self.getEmojiList(),id: \.self){ i in
+                    HStack(spacing: 25){
+                        ForEach(i, id: \.self){ j in
+                            Button(action: {
+                                
+                            }){
+                                if (UnicodeScalar(j)?.properties.isEmoji)!{
+                                    Text(String(UnicodeScalar(j)!)).font(.system(size: 45))
+                                }else{
+                                    Text("")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    func getEmojiList() -> [[Int]]{
+        var emojis: [[Int]] = []
+        for i in 0x1F601...0x1F64{
+            var temp : [Int] = []
+            for j in i...i+3{
+                temp.append(j)
+            }
+            emojis.append(temp)
+        }
+        return emojis
+    }
+}
+*/
