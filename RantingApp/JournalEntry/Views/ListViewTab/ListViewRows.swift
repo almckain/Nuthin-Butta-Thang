@@ -16,9 +16,15 @@ struct ListViewRows: View {
                 Text(entry.emoji)
                     .font(.system(size: 50))
                 VStack(alignment: .leading){
-                    Text(entry.text)
-                        .lineLimit(1)
-                        .truncationMode(.tail)
+                    if entry.title == ""{
+                        Text(entry.text)
+                            .lineLimit(1)
+                            .truncationMode(.tail)
+                    }else{
+                        Text(entry.title)
+                            .lineLimit(1)
+                            .truncationMode(.tail)
+                    }
                     Text(entry.date.formatted(date: .abbreviated, time: .omitted))
                 }
                 
