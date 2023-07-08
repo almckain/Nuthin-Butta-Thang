@@ -13,21 +13,28 @@ struct ImageUploadView: View {
             HStack{
                 ZStack{
                     Circle()
-                        .stroke(Color.black, lineWidth: 2)
+                        .stroke(Color("DarkPurple"), lineWidth: 1)
                         .frame(width: 50, height: 50)
                     Image(systemName: "camera")
+                        .foregroundColor(Color("DarkPurple"))
                 }
                 Text("Upload a\nthumbnail")
+                    .foregroundColor(Color("DarkPurple"))
+
             }
             Spacer()
             HStack{
                 ZStack{
                     Circle()
-                        .stroke(Color.black, lineWidth: 2)
+                        .stroke(Color("DarkPurple"), lineWidth: 1)
                         .frame(width: 50, height: 50)
                     Image(systemName: "plus")
+                        .foregroundColor(Color("DarkPurple"))
+
                 }
                 Text("Emoji\nthumbnail")
+                    .foregroundColor(Color("DarkPurple"))
+
             }
         }
     }
