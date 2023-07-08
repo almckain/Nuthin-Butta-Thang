@@ -46,7 +46,7 @@ struct EntryFormView: View {
                             RoundedRectangle(cornerRadius: 18)
                                 .fill(Color("uiGrey")).opacity(0.3)
                                 .frame(height: 38)
-                                .shadow(color: .black.opacity(0.59), radius: 8, x: 0, y: 4)
+                                .shadow(color: .blue.opacity(0.59), radius: 8, x: 0, y: 4)
                             HStack{
                                 Text("Current Date:")
                                     .multilineTextAlignment(.leading)
@@ -64,7 +64,7 @@ struct EntryFormView: View {
                         RoundedRectangle(cornerRadius: 18)
                             .fill(Color("uiGrey")).opacity(0.3)
                             .frame(height: 38)
-                            .shadow(color: .black.opacity(0.59), radius: 8, x: 0, y: 4)
+                            .shadow(color: .blue.opacity(0.59), radius: 8, x: 0, y: 4)
                         HStack{
                             Text("Location:")
                                 .multilineTextAlignment(.leading)
@@ -86,7 +86,7 @@ struct EntryFormView: View {
                         RoundedRectangle(cornerRadius: 20)
                             .fill(Color("uiGrey")).opacity(0.3)
                             .frame(height: 38)
-                            .shadow(color: .black.opacity(0.59), radius: 8, x: 0, y: 4)
+                            .shadow(color: .blue.opacity(0.59), radius: 8, x: 0, y: 4)
                         TextField("Title (optional)", text: $viewModel.title)
                             .padding()
                             .background(Color.clear.cornerRadius(20))
@@ -97,11 +97,11 @@ struct EntryFormView: View {
                     ZStack{
                         RoundedRectangle(cornerRadius: 20)
                             .fill(Color("uiGrey")).opacity(0.3)
-                            .frame(height: 1020)
-                            .shadow(color: .black.opacity(0.59), radius: 8, x: 2, y: 8)
+                            .frame(height: 470)
+                            .shadow(color: .blue.opacity(0.59), radius: 8, x: 2, y: 8)
                         TextField("So, what's going on buddy?", text: $viewModel.text, axis: .vertical)
                             .padding()
-                            .lineLimit(45...)
+                            .lineLimit(20...)
                             .background(Color.clear.cornerRadius(20))
                     }.padding(.top, 15)
                     
@@ -133,75 +133,7 @@ struct EntryFormView: View {
                 .padding(.horizontal, 25)
                 .padding(.top, 250)
             }
-            
-            /*
-            Form{
-                if !viewModel.updating{
-                    Section{
-                        DatePicker(selection: $viewModel.date, displayedComponents: .date){
-                            Text("Date Created:")
-                        }
-                    }
-                    
-                }
-                //Location
-                Section{
-                    Text("Location:")
-                }
-                
-                //Picture and emoji selector
-                ImageUploadView()
-                
-                Section{
-                    TextField("Title (optional): ", text: $viewModel.title)
-                }
-                
-                Section {
-                    VStack(alignment: .leading) {
-                        Text("What's going on, buddy?")
-                            .font(.headline)
-                        TextEditor(text: $viewModel.text)
-                            .font(.body) // Change the font size as needed
-                            .foregroundColor(.black)
-                            .background(Color.white)
-                            .cornerRadius(10)
-                            .shadow(color: .gray, radius: 2, x: 0, y: 2)
-                    }
-                    .padding()
-                }
-
-                
-                Section(footer:
-                            HStack{
-                    Spacer()
-                    Button{
-                        if viewModel.updating {
-                            let entry = JournalEntry(id: viewModel.id!,
-                                                     text: viewModel.text,
-                                                     emoji: viewModel.emoji,
-                                                     title: viewModel.title,
-                                                     date: viewModel.date)
-                            journalStore.update(entry)
-                        }else{
-                            let newEntry = JournalEntry(text: viewModel.text,
-                                                        emoji: viewModel.emoji,
-                                                        title: viewModel.title,
-                                                        date: viewModel.date)
-                            journalStore.add(newEntry)
-                        }
-                        dismiss()
-                    }label:{
-                        Text(viewModel.updating ? "Update Journal Entry" :"New Journal Entry")
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .disabled(viewModel.incomplete)
-                    Spacer()
-                }
-                ){
-                    EmptyView()
-                }
-            }
-             */
+            EmptyView()
         }
     }
     
