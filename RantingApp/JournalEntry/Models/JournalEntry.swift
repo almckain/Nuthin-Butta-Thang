@@ -25,6 +25,8 @@ struct JournalEntry: Identifiable{
         self.title = title
     }
     
+    //Im not typing anyhitng
+    
     static var sampleEntries:[JournalEntry]{
         return [
             JournalEntry(text: "Im unhappy because im life sucks and im lonely", emoji: "🤬", title: "I do be mad lonely", date: Date().diff(numDays: 0)),

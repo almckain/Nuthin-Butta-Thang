@@ -17,6 +17,7 @@ struct EntryFormView: View {
     
     @State private var userInput: String = ""
     @State private var entryTitle: String = ""
+    
            
     var body: some View {
         ZStack{
@@ -34,7 +35,7 @@ struct EntryFormView: View {
                             .multilineTextAlignment(.center)
                             .padding(.vertical, 20)
                     } else{
-                        Text("Today's Entry")
+                        Text("New Journal Entry")
                             .font(.title2)
                             .fontWeight(.bold)
                             .multilineTextAlignment(.center)
@@ -48,7 +49,7 @@ struct EntryFormView: View {
                                 .frame(height: 38)
                                 .shadow(color: .blue.opacity(0.59), radius: 8, x: 0, y: 4)
                             HStack{
-                                Text("Current Date:")
+                                Text("Date & Time:")
                                     .multilineTextAlignment(.leading)
                                 Spacer()
                                 Text(dateToString(date: Date()))
@@ -140,6 +141,7 @@ struct EntryFormView: View {
     func dateToString(date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
+        formatter.timeStyle = .short
         return formatter.string(from: date)
     }
 }

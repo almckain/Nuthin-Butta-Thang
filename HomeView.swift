@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var myEntries: JournalStore
+
     @State private var status: CGFloat = 0.7
+    @State private var formType: EntryFormType?
+    @State private var showEntryForm = false
+
     
     var userPreference: UserPreferences
     
@@ -66,20 +71,38 @@ struct HomeView: View {
                             
                         }.padding(EdgeInsets(top: 1, leading: 15, bottom: 5, trailing: 15))
                         
-                        NavigationLink(destination: Text("Destination View")) {
+                        
+                        Button{
+                            formType = .new
+                        } label: {
+                            Image(systemName: "plus.circle.fill")
+                                .imageScale(.large)
+                        }
+                        .sheet(item: $formType) { $0 }
+
+                        
+                        /*
+                        Button{
+                            formType = .new
+                        } label: {
+                            Image(systemName: "plus.circle.fill")
+                                .imageScale(.large)
+                        }
+                        
+                        NavigationLink(destination: Text("")) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 12)
                                     .fill(userPreference.darkPurple)
                                     .frame(height: 40)
                                     .shadow(color: .black.opacity(0.10), radius: 4, x: 0, y: 8)
                                 
-                                Text("View Today's Entry")
+                                Text("New Journal Entry")
                                     .fontWeight(.light)
                                     .foregroundColor(.white)
                                     .font(.headline)
                             }
                         }.padding(EdgeInsets(top: 1, leading: 15, bottom: 5, trailing: 15))
-                        
+                        */
                         NavigationLink(destination: Text("Destination View")) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 12)
@@ -118,7 +141,9 @@ struct HomeView: View {
                         Spacer()
                     
                     }
+                    .sheet(item: $formType) { $0 }
                 }
+                
             }
             
         }

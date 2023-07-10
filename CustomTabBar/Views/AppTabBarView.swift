@@ -15,7 +15,7 @@ struct AppTabBarView: View {
     
     var body: some View {
         CustomTabBarContainerView(selection: $tabSelection) {
-            HomeView(userPreference: UserPreferences()) //Home Screen 
+            HomeView(userPreference: UserPreferences()).environmentObject(JournalStore(preview: true)) //Home Screen 
                 .tabBarItem(tab: .home, selection: $tabSelection)
             EventsCalendarView()
                 .tabBarItem(tab: .calendar, selection: $tabSelection)

@@ -12,6 +12,7 @@
 		6E2B8CF12A1D84BA00396722 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E2B8CF02A1D84BA00396722 /* Preview Assets.xcassets */; };
 		6E385F972A23E96600C4909A /* UserAgreement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E385F962A23E96600C4909A /* UserAgreement.swift */; };
 		6E385F992A23EAAB00C4909A /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E385F982A23EAAB00C4909A /* PageView.swift */; };
+		6E430A592A5BA6990089AEE8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E430A582A5BA6990089AEE8 /* Launch Screen.storyboard */; };
 		6E492C972A27FF0000FF8F69 /* RemindersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E492C962A27FF0000FF8F69 /* RemindersView.swift */; };
 		6E4F9BEB2A1FD9500000CF78 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9BEA2A1FD9500000CF78 /* HomeScreenView.swift */; };
 		6E4F9BEF2A20109B0000CF78 /* AffirmationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4F9BEE2A20109B0000CF78 /* AffirmationAPI.swift */; };
@@ -55,6 +56,7 @@
 		6E2B8CF02A1D84BA00396722 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6E385F962A23E96600C4909A /* UserAgreement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgreement.swift; sourceTree = "<group>"; };
 		6E385F982A23EAAB00C4909A /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		6E430A582A5BA6990089AEE8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		6E492C962A27FF0000FF8F69 /* RemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersView.swift; sourceTree = "<group>"; };
 		6E4F9BEA2A1FD9500000CF78 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		6E4F9BEE2A20109B0000CF78 /* AffirmationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationAPI.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		6E2B8CDD2A1D84BA00396722 = {
 			isa = PBXGroup;
 			children = (
+				6E430A582A5BA6990089AEE8 /* Launch Screen.storyboard */,
 				6E9AFC7C2A535AE2008DF0B7 /* ImageUploadView.swift */,
 				6E9AFC6F2A526148008DF0B7 /* CustomTabBar */,
 				6EBCCEA12A4C00F500079E4E /* PetView.swift */,
@@ -360,6 +363,7 @@
 			files = (
 				6E2B8CF12A1D84BA00396722 /* Preview Assets.xcassets in Resources */,
 				6E2B8CEE2A1D84BA00396722 /* Assets.xcassets in Resources */,
+				6E430A592A5BA6990089AEE8 /* Launch Screen.storyboard in Resources */,
 				6E4F9BF12A2013EA0000CF78 /* BackupAffirmations.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,6 +538,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RantingApp/Preview Content\"";
@@ -543,8 +548,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -563,6 +568,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RantingApp/Preview Content\"";
@@ -572,8 +578,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
