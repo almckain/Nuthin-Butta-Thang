@@ -121,7 +121,7 @@ struct HomeView: View {
                             RoundedRectangle(cornerRadius: 22, style: .continuous)
                                 .fill(Color("uiGrey")).opacity(0.3)
                                 .frame(height: 38)
-                                .shadow(color: .black.opacity(0.59), radius: 8, x: 0, y: 4)
+                                .shadow(color: .blue.opacity(0.59), radius: 8, x: 0, y: 4)
 
                             HStack{
                                 Text("Service Pet Lucy!")
@@ -166,7 +166,7 @@ struct HomeView: View {
             RoundedRectangle(cornerRadius: 22)
                 .fill(Color("uiGrey")).opacity(0.2)
                 .frame(width: 108, height: 98)
-                .shadow(color: .black.opacity(0.50), radius: 4, x: 0, y: 8)
+                .shadow(color: .blue.opacity(0.50), radius: 4, x: 0, y: 8)
               //.shadow(color: .black.opacity(0.15), radius: 4, x: 0, y: 4)
             VStack {
                 Text(title)
@@ -180,7 +180,7 @@ struct HomeView: View {
         }
     }
     
-    func generateDayTab(date: String, didEnter: Bool) -> some View{
+    func generateDayTab(date: Date, didEnter: Bool) -> some View{
         VStack{
             ZStack{
                 if didEnter{
@@ -204,7 +204,7 @@ struct HomeView: View {
                         .foregroundColor(userPreference.lightPurple)
                 }
             }
-            Text(date)
+            Text(date.formatted(date: .abbreviated, time: .omitted))
                 .font(.footnote)
                 .fontWeight(.light)
                 .foregroundColor(userPreference.darkPurple)
@@ -217,7 +217,7 @@ struct HomeView: View {
             RoundedRectangle(cornerRadius: 22)
                 .fill(Color("uiGrey")).opacity(0.2)
                 .frame(height: 155)
-                .shadow(color: .black.opacity(0.50), radius: 3, x: 0, y: 8)
+                .shadow(color: .blue.opacity(0.50), radius: 3, x: 0, y: 8)
             VStack{
                 HStack{
                     Text("You're on a 4 day streak!")
@@ -227,13 +227,13 @@ struct HomeView: View {
                     Spacer()
                 }
                 HStack{
-                    generateDayTab(date: "Jun 25", didEnter: true)
-                    generateDayTab(date: "Jun 26", didEnter: true)
-                    generateDayTab(date: "Jun 27", didEnter: false)
-                    generateDayTab(date: "Jun 28", didEnter: true)
-                    generateDayTab(date: "Jun 29", didEnter: true)
-                    generateDayTab(date: "Jun 30", didEnter: true)
-                    generateDayTab(date: "Jul 1", didEnter: true)
+                    generateDayTab(date: Date().diff(numDays: -4), didEnter: true)
+                    generateDayTab(date: Date().diff(numDays: -3), didEnter: true)
+                    generateDayTab(date: Date().diff(numDays: -2), didEnter: false)
+                    generateDayTab(date: Date().diff(numDays: -1), didEnter: true)
+                    generateDayTab(date: Date(), didEnter: true)
+                    generateDayTab(date: Date().diff(numDays: 1), didEnter: true)
+                    generateDayTab(date: Date().diff(numDays: 2), didEnter: true)
                 }
             }
         }
