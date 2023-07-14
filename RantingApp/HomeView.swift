@@ -71,14 +71,6 @@ struct HomeView: View {
                             
                         }.padding(EdgeInsets(top: 1, leading: 15, bottom: 5, trailing: 15))
                         
-                        
-                        Button{
-                            formType = .new
-                        } label: {
-                            Image(systemName: "plus.circle.fill")
-                                .imageScale(.large)
-                        }
-                        .sheet(item: $formType) { $0 }
 
                         
                         /*
@@ -103,7 +95,8 @@ struct HomeView: View {
                             }
                         }.padding(EdgeInsets(top: 1, leading: 15, bottom: 5, trailing: 15))
                         */
-                        NavigationLink(destination: Text("Destination View")) {
+                        
+                        NavigationLink(destination: EntriesListView().environmentObject(JournalStore(preview: true))) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 12)
                                     .stroke(userPreference.darkPurple, lineWidth: 2)
@@ -116,6 +109,7 @@ struct HomeView: View {
                             }
                         }
                         .padding(EdgeInsets(top: 1, leading: 15, bottom: 5, trailing: 15))
+
                         
                         ZStack{
                             RoundedRectangle(cornerRadius: 22, style: .continuous)
@@ -142,12 +136,16 @@ struct HomeView: View {
                     
                     }
                     .sheet(item: $formType) { $0 }
-                }
+                }.onAppear(perform: {
+                    myEntries.updateStreak()
+                })
                 
             }
-            
+
         }
+        
     }
+    
     
     func generateStatusBar(progress: CGFloat) -> some View{
         ZStack(alignment: .leading) {
@@ -189,6 +187,7 @@ struct HomeView: View {
                         .frame(width: 44, height: 49)
                         .background(userPreference.darkPurple)
                         .cornerRadius(10)
+                        
                     Image(systemName: "checkmark")
                         .resizable()
                         .frame(width: 18, height: 18)
@@ -204,6 +203,7 @@ struct HomeView: View {
                         .foregroundColor(userPreference.lightPurple)
                 }
             }
+
             Text(date.formatted(date: .abbreviated, time: .omitted))
                 .font(.footnote)
                 .fontWeight(.light)
@@ -220,7 +220,7 @@ struct HomeView: View {
                 .shadow(color: .blue.opacity(0.50), radius: 3, x: 0, y: 8)
             VStack{
                 HStack{
-                    Text("You're on a 4 day streak!")
+                    Text("You're on a \(myEntries.streak) day streak!")
                         .foregroundColor(userPreference.darkPurple)
                         .fontWeight(.bold)
                         .padding(.leading, 10)
@@ -243,5 +243,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView(userPreference: UserPreferences())
+            .environmentObject(JournalStore(preview: true))
     }
 }

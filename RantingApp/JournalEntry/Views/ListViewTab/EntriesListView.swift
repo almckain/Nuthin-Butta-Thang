@@ -37,6 +37,8 @@ struct EntriesListView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
+
     }
 }
 

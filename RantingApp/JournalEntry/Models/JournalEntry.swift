@@ -29,12 +29,18 @@ struct JournalEntry: Identifiable{
     
     static var sampleEntries:[JournalEntry]{
         return [
-            JournalEntry(text: "Im unhappy because im life sucks and im lonely", emoji: "🤬", title: "I do be mad lonely", date: Date().diff(numDays: 0)),
+            //JournalEntry(text: "Im unhappy because im life sucks and im lonely", emoji: "🤬", title: "I do be mad lonely", date: Date().diff(numDays: 0)),
             JournalEntry(text: "Sometime when i go poop i keep wiping and wiping and it seems like its never going to end.", emoji: "🙃", title: "I have to keep wiping", date: Date().diff(numDays: -1)),
-            JournalEntry(text: "Recently i tried porting this app to android and it really pissed me off. Like just use Apple omggg", emoji: "🤬", title: "Developing for android is not chill", date: Date().diff(numDays: 6)),
-            JournalEntry(text: "Im preparing for my coding interviews and its pretty daughnting (dont think i spelt that right).", emoji: "😬", title: "Preparing for coding interviews is not chill", date: Date().diff(numDays: 2)),
+            
+            JournalEntry(text: "Recently i tried porting this app to android and it really pissed me off. Like just use Apple omggg", emoji: "🤬", title: "Developing for android is not chill", date: Date().diff(numDays: -6)),
+            JournalEntry(text: "Im preparing for my coding interviews and its pretty daughnting (dont think i spelt that right).", emoji: "😬", title: "Preparing for coding interviews is not chill", date: Date().diff(numDays: -12)),
+             
             JournalEntry(text: "Its a little stressing to think that i might not graduate in four years. Getting two degrees is tough.", emoji: "😓", title: "Im stressed", date: Date().diff(numDays: -3)),
-            JournalEntry(text: "Dating is hard in college. Not sure if people want to date for the future or if they want to date for fun. Its annoying and immature.", emoji: "🙄", title: "Life sucks then you die", date: Date().diff(numDays: -4))
+            JournalEntry(text: "Dating is hard in college. Not sure if people want to date for the future or if they want to date for fun. Its annoying and immature.", emoji: "🙄", title: "Life sucks then you die", date: Date().diff(numDays: -4)),
+            //JournalEntry(text: "t-e-s-t", emoji: "😇", title: "TEST 1", date: Date()),
+            JournalEntry(text: "t-e-s-t", emoji: "😇", title: "TEST 2", date: Date().diff(numDays: -1)),
+            JournalEntry(text: "t-e-s-t", emoji: "😇", title: "TEST 3", date: Date().diff(numDays: -2)),
+            JournalEntry(text: "t-e-s-t", emoji: "😇", title: "TEST 4", date: Date().diff(numDays: -3)),
         ]
     }
 }
